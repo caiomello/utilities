@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		25F5F99E1EC4A4AC008EE65F /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F5F9941EC4A4AC008EE65F /* Utilities.framework */; };
 		25F5F9A31EC4A4AC008EE65F /* UtilitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F5F9A21EC4A4AC008EE65F /* UtilitiesTests.swift */; };
+		25F5F9AF1EC4A611008EE65F /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F5F9AE1EC4A611008EE65F /* Utilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +28,7 @@
 		25F5F99D1EC4A4AC008EE65F /* UtilitiesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UtilitiesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		25F5F9A21EC4A4AC008EE65F /* UtilitiesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilitiesTests.swift; sourceTree = "<group>"; };
 		25F5F9A41EC4A4AC008EE65F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		25F5F9AE1EC4A611008EE65F /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 		25F5F9961EC4A4AC008EE65F /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				25F5F9AE1EC4A611008EE65F /* Utilities.swift */,
 				25F5F9981EC4A4AC008EE65F /* Info.plist */,
 			);
 			path = Utilities;
@@ -145,6 +148,7 @@
 					25F5F9931EC4A4AC008EE65F = {
 						CreatedOnToolsVersion = 8.3.1;
 						DevelopmentTeam = 7Q8BV53NMG;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					25F5F99C1EC4A4AC008EE65F = {
@@ -194,6 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25F5F9AF1EC4A611008EE65F /* Utilities.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +325,7 @@
 		25F5F9A91EC4A4AC008EE65F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 7Q8BV53NMG;
@@ -332,6 +338,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = caiomello.Utilities;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -339,6 +346,7 @@
 		25F5F9AA1EC4A4AC008EE65F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 7Q8BV53NMG;
@@ -358,6 +366,7 @@
 		25F5F9AC1EC4A4AC008EE65F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 7Q8BV53NMG;
 				INFOPLIST_FILE = UtilitiesTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -370,6 +379,7 @@
 		25F5F9AD1EC4A4AC008EE65F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 7Q8BV53NMG;
 				INFOPLIST_FILE = UtilitiesTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -398,6 +408,7 @@
 				25F5F9AA1EC4A4AC008EE65F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		25F5F9AB1EC4A4AC008EE65F /* Build configuration list for PBXNativeTarget "UtilitiesTests" */ = {
 			isa = XCConfigurationList;
@@ -406,6 +417,7 @@
 				25F5F9AD1EC4A4AC008EE65F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
