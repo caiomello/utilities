@@ -1,14 +1,14 @@
 //
-//  AddButton.swift
+//  ActionButton.swift
 //  Utilities
 //
-//  Created by Caio Mello on 7/12/15.
-//  Copyright © 2015 Caio Mello. All rights reserved.
+//  Created by Caio Mello on May 12, 2017.
+//  Copyright © 2017 Caio Mello. All rights reserved.
 //
 
 import UIKit
 
-@IBDesignable public class AddButton: UIControl {
+@IBDesignable public class ActionButton: UIControl {
 	fileprivate let titleLabel = UILabel()
 	
 	@IBInspectable var borderWidth: Float = 1 {
@@ -107,7 +107,7 @@ import UIKit
 
 // MARK: - Layout
 
-extension AddButton {
+extension ActionButton {
 	fileprivate func setupLayout() {
 		titleLabel.font = UIFont.systemFont(ofSize: CGFloat(titleSize), weight: UIFontWeightMedium)
 		titleLabel.textColor = color
