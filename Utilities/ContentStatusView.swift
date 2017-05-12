@@ -35,8 +35,8 @@ class ContentStatusView: UIView {
 // MARK: - Init
 
 extension ContentStatusView {
-	class func loadFromNib() -> ContentStatusView {
-		return UINib(nibName: "ContentStatusView", bundle: nil).instantiate(withOwner: nil, options: nil).first as! ContentStatusView
+	class func load(fromNib nib: UINib) -> ContentStatusView {
+		return nib.instantiate(withOwner: nil, options: nil).first as! ContentStatusView
 	}
 }
 
