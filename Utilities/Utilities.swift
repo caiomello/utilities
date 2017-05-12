@@ -176,3 +176,26 @@ extension UITableView {
 		cell.separatorInset.left = indexPath.row == numberOfRows(inSection: indexPath.section) - 1 ? CGFloat.greatestFiniteMagnitude : separatorInset.left
 	}
 }
+
+// MARK: - TraitCollection
+
+public enum SizeClass {
+	case compactRegular
+	case compactCompact
+	case regularCompact
+	case regularRegular
+}
+
+extension UITraitCollection {
+	public func sizeClass() -> SizeClass {
+		if horizontalSizeClass == .compact && verticalSizeClass == .regular {
+			return .compactRegular
+		} else if horizontalSizeClass == .compact && verticalSizeClass == .compact {
+			return .compactCompact
+		} else if horizontalSizeClass == .regular && verticalSizeClass == .compact {
+			return .regularCompact
+		}
+		
+		return .regularRegular
+	}
+}
