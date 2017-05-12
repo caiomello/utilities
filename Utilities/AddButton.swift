@@ -30,7 +30,7 @@ import UIKit
 		}
 	}
 	
-	@IBInspectable var title: String = "Add" {
+	@IBInspectable public var title: String = "Add" {
 		didSet {
 			titleLabel.text = title
 		}
