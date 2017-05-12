@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol AdaptiveFlowLayoutDelegate {
+public protocol AdaptiveFlowLayoutDelegate {
 	func cellReferenceSize() -> CGSize
 	func itemsPerLine() -> Int
 	
@@ -42,22 +42,19 @@ extension AdaptiveFlowLayoutDelegate {
 	}
 }
 
-class AdaptiveFlowLayout: UICollectionViewFlowLayout {
+public class AdaptiveFlowLayout: UICollectionViewFlowLayout {
 	fileprivate lazy var bounds: CGRect = self.collectionView!.bounds
 	
-	var delegate: AdaptiveFlowLayoutDelegate?
+	public var delegate: AdaptiveFlowLayoutDelegate?
 	
-	override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
+	override public func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
 		bounds = newBounds
-		
 		updateAttributes()
-		
 		return true
 	}
 	
-	override func invalidateLayout() {
+	override public func invalidateLayout() {
 		updateAttributes()
-		
 		super.invalidateLayout()
 	}
 	

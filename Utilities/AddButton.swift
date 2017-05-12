@@ -8,24 +8,22 @@
 
 import UIKit
 
-// TODO: Refactor
-
-@IBDesignable class AddButton: UIControl {
-	var titleLabel: UILabel = UILabel()
+@IBDesignable public class AddButton: UIControl {
+	fileprivate let titleLabel = UILabel()
 	
-	@IBInspectable var borderWidth: Float = 1 {
+	@IBInspectable fileprivate var borderWidth: Float = 1 {
 		didSet {
 			layer.borderWidth = CGFloat(borderWidth)
 		}
 	}
 	
-	@IBInspectable var cornerRadius: Float = 4 {
+	@IBInspectable fileprivate var cornerRadius: Float = 4 {
 		didSet {
 			layer.cornerRadius = CGFloat(cornerRadius)
 		}
 	}
 	
-	@IBInspectable var color: UIColor = UIColor.black {
+	@IBInspectable fileprivate var color: UIColor = UIColor.black {
 		didSet {
 			titleLabel.textColor = color
 			layer.borderColor = color.cgColor
@@ -38,31 +36,31 @@ import UIKit
 		}
 	}
 	
-	@IBInspectable var titleSize: Float = 15 {
+	@IBInspectable fileprivate var titleSize: Float = 15 {
 		didSet {
 			titleLabel.font = UIFont.systemFont(ofSize: CGFloat(titleSize), weight: UIFontWeightMedium)
 		}
 	}
 	
-	override var isEnabled: Bool {
+	override public var isEnabled: Bool {
 		didSet {
 			refreshState()
 		}
 	}
 	
-	override var isHighlighted: Bool {
+	override public var isHighlighted: Bool {
 		didSet {
 			refreshState()
 		}
 	}
 	
-	override var isSelected: Bool {
+	override public var isSelected: Bool {
 		didSet {
 			refreshState()
 		}
 	}
 	
-	fileprivate func refreshState() {
+	private func refreshState() {
 		if isEnabled {
 			if isSelected {
 				titleLabel.textColor = superview?.backgroundColor
@@ -101,7 +99,7 @@ import UIKit
 	}
 	
 	// Required for initializing from interface builder
-	required init?(coder aDecoder: NSCoder) {
+	required public init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
 		setupLayout()
 	}

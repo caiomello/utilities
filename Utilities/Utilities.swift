@@ -11,7 +11,7 @@ import UIKit
 // MARK: - DateFormatter
 
 extension DateFormatter {
-	@nonobjc static let shared: DateFormatter = {
+	@nonobjc public static let shared: DateFormatter = {
 		let formatter = DateFormatter()
 		formatter.locale = Locale(identifier: "en_US_POSIX")
 		formatter.isLenient = true
@@ -22,7 +22,7 @@ extension DateFormatter {
 // MARK: - Date
 
 extension Date {
-	init(date: Date, hour: Int) {
+	public init(date: Date, hour: Int) {
 		var components = Calendar.current.dateComponents([.year, .month, .day], from: date)
 		components.hour = hour
 		
@@ -33,7 +33,7 @@ extension Date {
 // MARK: - Array
 
 extension Array {
-	func split(itemsPerSegment: IndexDistance) -> [[Element]] {
+	public func split(itemsPerSegment: IndexDistance) -> [[Element]] {
 		let sequence = stride(from: startIndex, to: endIndex, by: itemsPerSegment)
 		
 		return sequence.map({
@@ -46,7 +46,7 @@ extension Array {
 // MARK: - Sequence
 
 extension Sequence {
-	func group<U: Hashable>(by key: (Iterator.Element) -> U) -> [U: [Iterator.Element]] {
+	public func group<U: Hashable>(by key: (Iterator.Element) -> U) -> [U: [Iterator.Element]] {
 		var categories: [U: [Iterator.Element]] = [:]
 		
 		for element in self {
@@ -64,13 +64,13 @@ extension Sequence {
 // MARK: - Size
 
 extension CGSize {
-	init(size: CGSize, aspectFitToWidth width: CGFloat) {
+	public init(size: CGSize, aspectFitToWidth width: CGFloat) {
 		let scaleFactor = width/size.width
 		self.width = size.width * scaleFactor
 		self.height = size.height * scaleFactor
 	}
 	
-	init(size: CGSize, aspectFitToHeight height: CGFloat) {
+	public init(size: CGSize, aspectFitToHeight height: CGFloat) {
 		let scaleFactor = height/size.height
 		self.width = size.width * scaleFactor
 		self.height = size.height * scaleFactor
@@ -80,12 +80,12 @@ extension CGSize {
 // MARK: - Rect
 
 extension CGRect {
-	init(size: CGSize) {
+	public init(size: CGSize) {
 		self.origin = CGPoint(x: 0, y: 0)
 		self.size = size
 	}
 	
-	init(width: CGFloat, height: CGFloat) {
+	public init(width: CGFloat, height: CGFloat) {
 		self.init(size: CGSize(width: width, height: height))
 	}
 }
@@ -93,7 +93,7 @@ extension CGRect {
 // MARK: - Interface Builder
 
 @IBDesignable class CornerRadiusView: UIView {
-	@IBInspectable var cornerRadius: CGFloat = 0 {
+	@IBInspectable fileprivate var cornerRadius: CGFloat = 0 {
 		didSet {
 			layer.cornerRadius = cornerRadius
 		}
@@ -101,7 +101,7 @@ extension CGRect {
 }
 
 @IBDesignable class CornerRadiusVisualEffectView: UIVisualEffectView {
-	@IBInspectable var cornerRadius: CGFloat = 0 {
+	@IBInspectable fileprivate var cornerRadius: CGFloat = 0 {
 		didSet {
 			layer.cornerRadius = CGFloat(cornerRadius)
 		}
@@ -111,7 +111,7 @@ extension CGRect {
 // MARK: - ImageView
 
 extension UIImageView {
-	func boundsOfImage() -> CGRect {
+	public func boundsOfImage() -> CGRect {
 		if let image = self.image {
 			let widthFactor = image.size.width/self.bounds.size.width
 			let heightFactor = image.size.height/self.bounds.size.height
@@ -130,7 +130,7 @@ extension UIImageView {
 		return CGRect.zero
 	}
 	
-	func addShadow() {
+	public func addShadow() {
 		clipsToBounds = false
 		layer.shadowPath = UIBezierPath(rect: boundsOfImage()).cgPath
 		layer.shadowColor = UIColor.black.cgColor
@@ -143,7 +143,7 @@ extension UIImageView {
 // MARK: - Image
 
 extension UIImage {
-	convenience init(color: UIColor) {
+	public convenience init(color: UIColor) {
 		let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
 		
 		UIGraphicsBeginImageContext(rect.size)
@@ -163,7 +163,7 @@ extension UIImage {
 // MARK: - ScrollView
 
 extension UIScrollView {
-	func scrollToTop() {
+	public func scrollToTop() {
 		contentOffset.x = -contentInset.left
 		contentOffset.y = -contentInset.top
 	}
@@ -172,7 +172,7 @@ extension UIScrollView {
 // MARK: - TableViewCell
 
 extension UITableView {
-	func hideLastSeparator(withCell cell: UITableViewCell, indexPath: IndexPath) {
+	public func hideLastSeparator(withCell cell: UITableViewCell, indexPath: IndexPath) {
 		cell.separatorInset.left = indexPath.row == numberOfRows(inSection: indexPath.section) - 1 ? CGFloat.greatestFiniteMagnitude : separatorInset.left
 	}
 }

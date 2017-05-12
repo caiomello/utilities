@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum ContentStatusViewMode {
+public enum ContentStatusViewMode {
 	case hidden
 	case loading
 	case title(String)
@@ -16,7 +16,7 @@ enum ContentStatusViewMode {
 	case button(title: String, subtitle: String, buttonTitle: String, buttonAction: () -> Void)
 }
 
-class ContentStatusView: UIView {
+public class ContentStatusView: UIView {
 	@IBOutlet fileprivate var stackView: UIStackView!
 	@IBOutlet fileprivate var titleLabel: UILabel!
 	@IBOutlet fileprivate var subtitleLabel: UILabel!
@@ -25,7 +25,7 @@ class ContentStatusView: UIView {
 	
 	fileprivate var buttonAction: () -> Void = {}
 	
-	var mode: ContentStatusViewMode = .hidden {
+	public var mode: ContentStatusViewMode = .hidden {
 		didSet {
 			configure(withMode: mode)
 		}
@@ -35,7 +35,7 @@ class ContentStatusView: UIView {
 // MARK: - Init
 
 extension ContentStatusView {
-	class func load(fromNib nib: UINib) -> ContentStatusView {
+	public class func load(fromNib nib: UINib) -> ContentStatusView {
 		return nib.instantiate(withOwner: nil, options: nil).first as! ContentStatusView
 	}
 }
@@ -43,7 +43,7 @@ extension ContentStatusView {
 // MARK: - View
 
 extension ContentStatusView {
-	override func awakeFromNib() {
+	override public func awakeFromNib() {
 		super.awakeFromNib()
 		
 		mode = .hidden

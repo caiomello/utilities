@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol Pagination {
+public protocol Pagination {
 	var page: Int { get set }
 	func requestFirstPage()
 	func requestNextPage()
@@ -22,7 +22,7 @@ extension Pagination {
 	- parameter itemsPerPage: Number of items per page requested.
 	- parameter offset: Offset that triggers the next page request. E.g. Offset is 10. Items per page is 30. Next page is requested after displaying item 20.
 	*/
-	func requestNextPageIfNeeded(dataSource: [Any], currentIndex: Int, itemsPerPage: Int, offset: Int) {
+	public func requestNextPageIfNeeded(dataSource: [Any], currentIndex: Int, itemsPerPage: Int, offset: Int) {
 		let maximumNumberOfItemsForCurrentPage = itemsPerPage * page
 		
 		if dataSource.count >= maximumNumberOfItemsForCurrentPage && currentIndex == (maximumNumberOfItemsForCurrentPage - offset) {
