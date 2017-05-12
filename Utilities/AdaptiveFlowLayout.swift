@@ -21,23 +21,23 @@ public protocol AdaptiveFlowLayoutDelegate {
 }
 
 extension AdaptiveFlowLayoutDelegate {
-	func headerReferenceSize() -> CGSize {
+	public func headerReferenceSize() -> CGSize {
 		return CGSize.zero
 	}
 	
-	func footerReferenceSize() -> CGSize {
+	public func footerReferenceSize() -> CGSize {
 		return CGSize.zero
 	}
 	
-	func sectionInsets() -> UIEdgeInsets {
+	public func sectionInsets() -> UIEdgeInsets {
 		return UIEdgeInsets.zero
 	}
 	
-	func lineSpacing() -> CGFloat {
+	public func lineSpacing() -> CGFloat {
 		return 0
 	}
 	
-	func interItemSpacing() -> CGFloat {
+	public func interItemSpacing() -> CGFloat {
 		return 0
 	}
 }

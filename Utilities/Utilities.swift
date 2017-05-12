@@ -108,6 +108,24 @@ extension CGRect {
 	}
 }
 
+// MARK: - Animation
+
+//extension Utilities {
+//	class func animate(_ block: @escaping () -> Void) {
+//		animate(with: 0.2) { () -> Void in
+//			block()
+//		}
+//	}
+//	
+//	class func animate(with duration: TimeInterval, block: @escaping () -> Void) {
+//		let animator = UIViewPropertyAnimator(duration: duration, curve: .easeInOut) {
+//			block()
+//		}
+//		
+//		animator.startAnimation()
+//	}
+//}
+
 // MARK: - ImageView
 
 extension UIImageView {
