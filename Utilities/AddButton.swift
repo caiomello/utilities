@@ -11,19 +11,19 @@ import UIKit
 @IBDesignable public class AddButton: UIControl {
 	fileprivate let titleLabel = UILabel()
 	
-	@IBInspectable fileprivate var borderWidth: Float = 1 {
+	@IBInspectable var borderWidth: Float = 1 {
 		didSet {
 			layer.borderWidth = CGFloat(borderWidth)
 		}
 	}
 	
-	@IBInspectable fileprivate var cornerRadius: Float = 4 {
+	@IBInspectable var cornerRadius: Float = 4 {
 		didSet {
 			layer.cornerRadius = CGFloat(cornerRadius)
 		}
 	}
 	
-	@IBInspectable fileprivate var color: UIColor = UIColor.black {
+	@IBInspectable var color: UIColor = UIColor.black {
 		didSet {
 			titleLabel.textColor = color
 			layer.borderColor = color.cgColor
@@ -36,7 +36,7 @@ import UIKit
 		}
 	}
 	
-	@IBInspectable fileprivate var titleSize: Float = 15 {
+	@IBInspectable var titleSize: Float = 15 {
 		didSet {
 			titleLabel.font = UIFont.systemFont(ofSize: CGFloat(titleSize), weight: UIFontWeightMedium)
 		}
