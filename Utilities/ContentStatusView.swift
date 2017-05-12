@@ -17,11 +17,11 @@ public enum ContentStatusViewMode {
 }
 
 public class ContentStatusView: UIView {
-	@IBOutlet fileprivate var stackView: UIStackView!
-	@IBOutlet fileprivate var titleLabel: UILabel!
-	@IBOutlet fileprivate var subtitleLabel: UILabel!
-	@IBOutlet fileprivate var button: UIButton!
-	@IBOutlet fileprivate var activityIndicator: UIActivityIndicatorView!
+	@IBOutlet public var stackView: UIStackView!
+	@IBOutlet public var titleLabel: UILabel!
+	@IBOutlet public var subtitleLabel: UILabel!
+	@IBOutlet public var button: UIButton!
+	@IBOutlet public var activityIndicator: UIActivityIndicatorView!
 	
 	fileprivate var buttonAction: () -> Void = {}
 	
