@@ -93,7 +93,7 @@ extension CGRect {
 // MARK: - Interface Builder
 
 @IBDesignable class CornerRadiusView: UIView {
-	@IBInspectable fileprivate var cornerRadius: CGFloat = 0 {
+	@IBInspectable public var cornerRadius: CGFloat = 0 {
 		didSet {
 			layer.cornerRadius = cornerRadius
 		}
@@ -101,7 +101,7 @@ extension CGRect {
 }
 
 @IBDesignable class CornerRadiusVisualEffectView: UIVisualEffectView {
-	@IBInspectable fileprivate var cornerRadius: CGFloat = 0 {
+	@IBInspectable public var cornerRadius: CGFloat = 0 {
 		didSet {
 			layer.cornerRadius = CGFloat(cornerRadius)
 		}
