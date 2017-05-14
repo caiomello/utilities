@@ -90,24 +90,6 @@ extension CGRect {
 	}
 }
 
-// MARK: - Interface Builder
-
-@IBDesignable class CornerRadiusView: UIView {
-	@IBInspectable public var cornerRadius: CGFloat = 0 {
-		didSet {
-			layer.cornerRadius = cornerRadius
-		}
-	}
-}
-
-@IBDesignable class CornerRadiusVisualEffectView: UIVisualEffectView {
-	@IBInspectable public var cornerRadius: CGFloat = 0 {
-		didSet {
-			layer.cornerRadius = CGFloat(cornerRadius)
-		}
-	}
-}
-
 // MARK: - Animation
 
 //extension Utilities {
