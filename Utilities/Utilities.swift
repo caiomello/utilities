@@ -93,7 +93,7 @@ extension CGRect {
 // MARK: - Animation
 
 extension UIViewController {
-	func animate(animations: @escaping () -> Void) {
+	public func animate(animations: @escaping () -> Void) {
 		view.animate {
 			animations()
 		}
@@ -101,7 +101,7 @@ extension UIViewController {
 }
 
 extension UIView {
-	func animate(animations: @escaping () -> Void) {
+	public func animate(animations: @escaping () -> Void) {
 		UIViewPropertyAnimator(duration: 0.2, dampingRatio: 1.5) {
 			animations()
 		}.startAnimation()
