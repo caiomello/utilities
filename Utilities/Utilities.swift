@@ -92,21 +92,21 @@ extension CGRect {
 
 // MARK: - Animation
 
-//extension Utilities {
-//	class func animate(_ block: @escaping () -> Void) {
-//		animate(with: 0.2) { () -> Void in
-//			block()
-//		}
-//	}
-//	
-//	class func animate(with duration: TimeInterval, block: @escaping () -> Void) {
-//		let animator = UIViewPropertyAnimator(duration: duration, curve: .easeInOut) {
-//			block()
-//		}
-//		
-//		animator.startAnimation()
-//	}
-//}
+extension UIViewController {
+	func animate(animations: @escaping () -> Void) {
+		view.animate {
+			animations()
+		}
+	}
+}
+
+extension UIView {
+	func animate(animations: @escaping () -> Void) {
+		UIViewPropertyAnimator(duration: 0.2, dampingRatio: 1.5) {
+			animations()
+		}.startAnimation()
+	}
+}
 
 // MARK: - ImageView
 
