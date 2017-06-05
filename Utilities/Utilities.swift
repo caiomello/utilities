@@ -11,7 +11,7 @@ import UIKit
 // MARK: - DateFormatter
 
 extension DateFormatter {
-	@nonobjc public static let shared: DateFormatter = {
+	public static let shared: DateFormatter = {
 		let formatter = DateFormatter()
 		formatter.locale = Locale(identifier: "en_US_POSIX")
 		formatter.isLenient = true
@@ -46,7 +46,7 @@ extension Array {
 // MARK: - Sequence
 
 extension Sequence {
-	public func group<U: Hashable>(by key: (Iterator.Element) -> U) -> [U: [Iterator.Element]] {
+	public func group<U>(by key: (Iterator.Element) -> U) -> [U: [Iterator.Element]] {
 		var categories: [U: [Iterator.Element]] = [:]
 		
 		for element in self {
