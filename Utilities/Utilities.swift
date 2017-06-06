@@ -162,10 +162,26 @@ extension UIImage {
 
 // MARK: - ScrollView
 
-extension UIScrollView {
-	public func scrollToTop() {
-		contentOffset.x = -contentInset.left
-		contentOffset.y = -contentInset.top
+//extension UIScrollView {
+//	public func scrollToTop() {
+//		contentOffset.x = -contentInset.left
+//		contentOffset.y = -contentInset.top
+//	}
+//}
+
+extension UITableView {
+	public func scrollToTop(animated: Bool) {
+		guard let cell = cellForRow(at: IndexPath(row: 0, section: 0)) else { return }
+		guard let indexPath = indexPath(for: cell) else { return }
+		scrollToRow(at: indexPath, at: .top, animated: animated)
+	}
+}
+
+extension UICollectionView {
+	public func scrollToTop(animated: Bool) {
+		guard let cell = cellForItem(at: IndexPath(item: 0, section: 0)) else { return }
+		guard let indexPath = indexPath(for: cell) else { return }
+		scrollToItem(at: indexPath, at: .top, animated: animated)
 	}
 }
 
