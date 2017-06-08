@@ -46,8 +46,8 @@ extension Array {
 // MARK: - Sequence
 
 extension Sequence {
-	public func group<U>(by key: (Iterator.Element) -> U) -> [U: [Iterator.Element]] {
-		var categories: [U: [Iterator.Element]] = [:]
+	public func group<U>(by key: (Element) -> U) -> [U: [Element]] {
+		var categories: [U: [Element]] = [:]
 		
 		for element in self {
 			let key = key(element)
@@ -102,7 +102,7 @@ extension UIViewController {
 
 extension UIView {
 	public func animate(animations: @escaping () -> Void) {
-		UIViewPropertyAnimator(duration: 0.2, dampingRatio: 1.5) {
+		UIViewPropertyAnimator(duration: 0.3, dampingRatio: 1) {
 			animations()
 		}.startAnimation()
 	}
