@@ -216,3 +216,20 @@ extension UITraitCollection {
 		return .regularRegular
 	}
 }
+
+// MARK: - FlowLayout
+
+extension UICollectionViewFlowLayout {
+	func itemSize(withColumns numberOfColumns: Int) -> CGSize {
+		let numberOfColumns = CGFloat(numberOfColumns)
+		
+		let totalMargin = sectionInset.left + sectionInset.right
+		let totalSpacing = minimumInteritemSpacing * (numberOfColumns - 1)
+		
+		let itemWidth = (collectionView!.bounds.width - totalMargin - totalSpacing)/numberOfColumns
+		
+		let size = CGSize(size: itemSize, aspectFitToWidth: itemWidth)
+		
+		return CGSize(width: size.width, height: size.height)
+	}
+}
