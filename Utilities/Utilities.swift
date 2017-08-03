@@ -220,7 +220,7 @@ extension UITraitCollection {
 // MARK: - FlowLayout
 
 extension UICollectionViewFlowLayout {
-	func itemSize(withColumns numberOfColumns: Int) -> CGSize {
+	public func itemSize(withColumns numberOfColumns: Int) -> CGSize {
 		let numberOfColumns = CGFloat(numberOfColumns)
 		
 		let totalMargin = sectionInset.left + sectionInset.right
