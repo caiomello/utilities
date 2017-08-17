@@ -7,10 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		257B75C21F45D668006344A0 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257B75C11F45D668006344A0 /* Date.swift */; };
+		257B75C41F45D69D006344A0 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257B75C31F45D69D006344A0 /* Animation.swift */; };
+		257B75C81F45D79C006344A0 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257B75C71F45D79C006344A0 /* TableView.swift */; };
+		257B75CA1F45D7A1006344A0 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257B75C91F45D7A1006344A0 /* CollectionView.swift */; };
+		257B75CC1F45D7B4006344A0 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257B75CB1F45D7B4006344A0 /* Images.swift */; };
+		257B75CE1F45D875006344A0 /* Collections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257B75CD1F45D875006344A0 /* Collections.swift */; };
+		257B75D01F45DB28006344A0 /* TraitCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257B75CF1F45DB28006344A0 /* TraitCollection.swift */; };
+		257B75D21F45DBD1006344A0 /* Graphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257B75D11F45DBD1006344A0 /* Graphics.swift */; };
 		25F5F99E1EC4A4AC008EE65F /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F5F9941EC4A4AC008EE65F /* Utilities.framework */; };
 		25F5F9A31EC4A4AC008EE65F /* UtilitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F5F9A21EC4A4AC008EE65F /* UtilitiesTests.swift */; };
-		25F5F9AF1EC4A611008EE65F /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F5F9AE1EC4A611008EE65F /* Utilities.swift */; };
-		25F5F9B11EC4AF84008EE65F /* AdaptiveFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F5F9B01EC4AF84008EE65F /* AdaptiveFlowLayout.swift */; };
 		25F5F9B31EC4AF97008EE65F /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F5F9B21EC4AF97008EE65F /* Pagination.swift */; };
 		25F5F9B51EC4AFE0008EE65F /* ContentStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F5F9B41EC4AFE0008EE65F /* ContentStatusView.swift */; };
 /* End PBXBuildFile section */
@@ -26,13 +32,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		257B75C11F45D668006344A0 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		257B75C31F45D69D006344A0 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
+		257B75C71F45D79C006344A0 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
+		257B75C91F45D7A1006344A0 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
+		257B75CB1F45D7B4006344A0 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		257B75CD1F45D875006344A0 /* Collections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collections.swift; sourceTree = "<group>"; };
+		257B75CF1F45DB28006344A0 /* TraitCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraitCollection.swift; sourceTree = "<group>"; };
+		257B75D11F45DBD1006344A0 /* Graphics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graphics.swift; sourceTree = "<group>"; };
 		25F5F9941EC4A4AC008EE65F /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		25F5F9981EC4A4AC008EE65F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		25F5F99D1EC4A4AC008EE65F /* UtilitiesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UtilitiesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		25F5F9A21EC4A4AC008EE65F /* UtilitiesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilitiesTests.swift; sourceTree = "<group>"; };
 		25F5F9A41EC4A4AC008EE65F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		25F5F9AE1EC4A611008EE65F /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
-		25F5F9B01EC4AF84008EE65F /* AdaptiveFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdaptiveFlowLayout.swift; sourceTree = "<group>"; };
 		25F5F9B21EC4AF97008EE65F /* Pagination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
 		25F5F9B41EC4AFE0008EE65F /* ContentStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentStatusView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,8 +89,14 @@
 		25F5F9961EC4A4AC008EE65F /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				25F5F9AE1EC4A611008EE65F /* Utilities.swift */,
-				25F5F9B01EC4AF84008EE65F /* AdaptiveFlowLayout.swift */,
+				257B75CD1F45D875006344A0 /* Collections.swift */,
+				257B75CB1F45D7B4006344A0 /* Images.swift */,
+				257B75CF1F45DB28006344A0 /* TraitCollection.swift */,
+				257B75D11F45DBD1006344A0 /* Graphics.swift */,
+				257B75C71F45D79C006344A0 /* TableView.swift */,
+				257B75C91F45D7A1006344A0 /* CollectionView.swift */,
+				257B75C11F45D668006344A0 /* Date.swift */,
+				257B75C31F45D69D006344A0 /* Animation.swift */,
 				25F5F9B21EC4AF97008EE65F /* Pagination.swift */,
 				25F5F9B41EC4AFE0008EE65F /* ContentStatusView.swift */,
 				25F5F9981EC4A4AC008EE65F /* Info.plist */,
@@ -208,10 +226,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				257B75C21F45D668006344A0 /* Date.swift in Sources */,
+				257B75D21F45DBD1006344A0 /* Graphics.swift in Sources */,
 				25F5F9B51EC4AFE0008EE65F /* ContentStatusView.swift in Sources */,
 				25F5F9B31EC4AF97008EE65F /* Pagination.swift in Sources */,
-				25F5F9AF1EC4A611008EE65F /* Utilities.swift in Sources */,
-				25F5F9B11EC4AF84008EE65F /* AdaptiveFlowLayout.swift in Sources */,
+				257B75D01F45DB28006344A0 /* TraitCollection.swift in Sources */,
+				257B75C81F45D79C006344A0 /* TableView.swift in Sources */,
+				257B75CC1F45D7B4006344A0 /* Images.swift in Sources */,
+				257B75C41F45D69D006344A0 /* Animation.swift in Sources */,
+				257B75CA1F45D7A1006344A0 /* CollectionView.swift in Sources */,
+				257B75CE1F45D875006344A0 /* Collections.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,7 +307,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -338,7 +362,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -365,6 +389,7 @@
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				INFOPLIST_FILE = Utilities/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = caiomello.Utilities;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -391,6 +416,7 @@
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				INFOPLIST_FILE = Utilities/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = caiomello.Utilities;
 				PRODUCT_NAME = "$(TARGET_NAME)";
