@@ -8,18 +8,8 @@
 
 import UIKit
 
-public struct AspectRatio {
-	let width: Int
-	let height: Int
-	
-	public init(width: Int, height: Int) {
-		self.width = width
-		self.height = height
-	}
-}
-
 public protocol Previewable {
-	func previewImageAspectRatio() -> AspectRatio
+	func previewImageAspectRatio() -> CGSize
 	func previewImageDownloadBlock(_ completion: (UIImage?) -> Void)
 }
 
