@@ -29,7 +29,7 @@ public class PreviewViewController: UIViewController {
 		view.backgroundColor = .black
 		
 		imageView = UIImageView()
-		imageView.contentMode = .scaleAspectFit
+		imageView.contentMode = .scaleAspectFill
 		imageView.translatesAutoresizingMaskIntoConstraints = false
 		view.addSubview(imageView)
 		view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[imageView]|", options: [], metrics: nil, views: ["imageView": imageView]))
@@ -37,10 +37,14 @@ public class PreviewViewController: UIViewController {
 		
 		self.item = item
 		self.previewActions = actions
-		self.preferredContentSize = CGSize(width: item.previewImageAspectRatio().width, height: item.previewImageAspectRatio().height)
+		self.preferredContentSize = item.previewImageAspectRatio()
 		
 		item.previewImageDownloadBlock { (image) in
 			self.imageView.image = image
+			
+			if let image = image {
+				self.preferredContentSize = image.size
+			}
 		}
 	}
 }
