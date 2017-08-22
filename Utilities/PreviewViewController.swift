@@ -23,7 +23,7 @@ public class PreviewViewController: UIViewController {
 		return previewActions
 	}
 	
-	convenience init(item: Previewable, actions: [UIPreviewAction]) {
+	public convenience init(item: Previewable, actions: [UIPreviewAction]) {
 		self.init()
 		
 		view.backgroundColor = .black
