@@ -22,30 +22,25 @@ public class PreviewViewController: UIViewController {
 	override public var previewActionItems: [UIPreviewActionItem] {
 		return previewActions
 	}
-}
-
-// MARK: - View
-
-extension PreviewViewController {
-	override public func viewDidLoad() {
-		super.viewDidLoad()
-	}
-}
-
-// MARK: - Helpers
-
-extension PreviewViewController {
-	public class func controller(withItem item: Previewable, actions: [UIPreviewActionItem]) -> PreviewViewController? {
-		let previewViewController = UIStoryboard(name: "Preview", bundle: Bundle(for: PreviewViewController.self)).instantiateInitialViewController() as? PreviewViewController
-		previewViewController?.item = item
-		previewViewController?.previewActions = actions
-		previewViewController?.preferredContentSize = CGSize(width: item.previewImageAspectRatio().width, height: item.previewImageAspectRatio().height)
+	
+	convenience init(item: Previewable, actions: [UIPreviewAction]) {
+		self.init()
+		
+		view.backgroundColor = .black
+		
+		imageView = UIImageView()
+		imageView.contentMode = .scaleAspectFit
+		imageView.translatesAutoresizingMaskIntoConstraints = false
+		view.addSubview(imageView)
+		view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[imageView]|", options: [], metrics: nil, views: ["imageView": imageView]))
+		view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[imageView]|", options: [], metrics: nil, views: ["imageView": imageView]))
+		
+		self.item = item
+		self.previewActions = actions
+		self.preferredContentSize = CGSize(width: item.previewImageAspectRatio().width, height: item.previewImageAspectRatio().height)
 		
 		item.previewImageDownloadBlock { (image) in
-			print(previewViewController?.imageView)
-			previewViewController?.imageView.image = image
+			self.imageView.image = image
 		}
-		
-		return previewViewController
 	}
 }
