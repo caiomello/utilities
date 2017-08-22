@@ -10,7 +10,7 @@ import UIKit
 
 public protocol Previewable {
 	func previewImageAspectRatio() -> CGSize
-	func previewImageDownloadBlock(_ completion: (UIImage?) -> Void)
+	func previewImageDownloadBlock(_ completion: @escaping (UIImage?) -> Void)
 }
 
 public class PreviewViewController: UIViewController {
