@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xXE-HV-Wwg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RbT-2M-WzS">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,41 +10,36 @@
     </dependencies>
     <scenes>
         <!--Preview View Controller-->
-        <scene sceneID="eqS-Du-Dn8">
+        <scene sceneID="Wg8-BZ-hHo">
             <objects>
-                <viewController storyboardIdentifier="MediaPreview" id="xXE-HV-Wwg" customClass="PreviewViewController" customModule="Utilities" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Opc-S5-kMS"/>
-                        <viewControllerLayoutGuide type="bottom" id="Gjt-uE-AFs"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="1xa-A8-1RR">
+                <viewController id="RbT-2M-WzS" customClass="PreviewViewController" customModule="Utilities" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="L32-ua-ITy">
                         <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eMJ-mG-aoG">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aaT-AE-CJX">
                                 <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.16078431369999999" green="0.17254901959999999" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="eMJ-mG-aoG" firstAttribute="leading" secondItem="1xa-A8-1RR" secondAttribute="leading" id="4DZ-b3-D9v"/>
-                            <constraint firstAttribute="trailing" secondItem="eMJ-mG-aoG" secondAttribute="trailing" id="7ez-pn-rNY"/>
-                            <constraint firstItem="eMJ-mG-aoG" firstAttribute="top" secondItem="1xa-A8-1RR" secondAttribute="top" id="8CI-Oe-40Q"/>
-                            <constraint firstAttribute="bottom" secondItem="eMJ-mG-aoG" secondAttribute="bottom" id="YEY-MT-1Xx"/>
+                            <constraint firstItem="aaT-AE-CJX" firstAttribute="leading" secondItem="3u9-XQ-pXb" secondAttribute="leading" id="IZg-iv-gFA"/>
+                            <constraint firstItem="3u9-XQ-pXb" firstAttribute="bottom" secondItem="aaT-AE-CJX" secondAttribute="bottom" id="QDa-Z3-1S3"/>
+                            <constraint firstItem="3u9-XQ-pXb" firstAttribute="trailing" secondItem="aaT-AE-CJX" secondAttribute="trailing" id="RLP-di-pmO"/>
+                            <constraint firstItem="aaT-AE-CJX" firstAttribute="top" secondItem="3u9-XQ-pXb" secondAttribute="top" id="peC-6P-1tO"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Oa4-UQ-jpm"/>
+                        <viewLayoutGuide key="safeArea" id="3u9-XQ-pXb"/>
                     </view>
                     <value key="contentSizeForViewInPopover" type="size" width="300" height="300"/>
-                    <nil key="simulatedStatusBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="300" height="300"/>
                     <connections>
-                        <outlet property="imageView" destination="eMJ-mG-aoG" id="mPP-1r-jaJ"/>
+                        <outlet property="imageView" destination="aaT-AE-CJX" id="eEz-Hj-B8Y"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lED-Sv-eaX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g0s-bB-b29" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4413" y="764"/>
+            <point key="canvasLocation" x="4575" y="429"/>
         </scene>
     </scenes>
 </document>

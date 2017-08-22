@@ -14,7 +14,7 @@ public protocol Previewable {
 }
 
 public class PreviewViewController: UIViewController {
-	@IBOutlet private var imageView: UIImageView!
+	@IBOutlet var imageView: UIImageView!
 	
 	public var item: Previewable?
 	private var previewActions: [UIPreviewActionItem] = []
@@ -42,6 +42,7 @@ extension PreviewViewController {
 		previewViewController?.preferredContentSize = CGSize(width: item.previewImageAspectRatio().width, height: item.previewImageAspectRatio().height)
 		
 		item.previewImageDownloadBlock { (image) in
+			print(previewViewController?.imageView)
 			previewViewController?.imageView.image = image
 		}
 		
