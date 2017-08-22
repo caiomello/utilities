@@ -14,7 +14,7 @@ public protocol Previewable {
 }
 
 public class PreviewViewController: UIViewController {
-	@IBOutlet var imageView: UIImageView!
+	@IBOutlet public var imageView: UIImageView!
 	
 	public var item: Previewable?
 	private var previewActions: [UIPreviewActionItem] = []
