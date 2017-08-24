@@ -10,15 +10,21 @@ import UIKit
 
 extension UIViewController {
 	public func animate(animations: @escaping () -> Void) {
-		view.animate {
-			animations()
-		}
+		view.animate(animations: animations)
+	}
+	
+	public func animate(withDuration duration: TimeInterval, animations: @escaping () -> Void) {
+		view.animate(withDuration: duration, animations: animations)
 	}
 }
 
 extension UIView {
 	public func animate(animations: @escaping () -> Void) {
-		UIViewPropertyAnimator(duration: 0.3, dampingRatio: 1) {
+		animate(withDuration: 0.3, animations: animations)
+	}
+	
+	public func animate(withDuration duration: TimeInterval, animations: @escaping () -> Void) {
+		UIViewPropertyAnimator(duration: duration, dampingRatio: 1) {
 			animations()
 		}.startAnimation()
 	}
