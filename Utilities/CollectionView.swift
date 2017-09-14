@@ -20,7 +20,7 @@ extension UICollectionViewFlowLayout {
 	public func itemSize(withColumns numberOfColumns: Int) -> CGSize {
 		let numberOfColumns = CGFloat(numberOfColumns)
 		
-		let totalMargin = sectionInset.left + sectionInset.right
+		let totalMargin = sectionInset.left + sectionInset.right + collectionView!.safeAreaInsets.left + collectionView!.safeAreaInsets.right
 		let totalSpacing = minimumInteritemSpacing * (numberOfColumns - 1)
 		
 		let itemWidth = (collectionView!.bounds.width - totalMargin - totalSpacing)/numberOfColumns
