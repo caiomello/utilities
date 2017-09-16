@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		254BDE931F4C8C2400B341C2 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254BDE921F4C8C2400B341C2 /* PreviewViewController.swift */; };
 		257B75C21F45D668006344A0 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257B75C11F45D668006344A0 /* Date.swift */; };
 		257B75C41F45D69D006344A0 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257B75C31F45D69D006344A0 /* Animation.swift */; };
 		257B75C81F45D79C006344A0 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257B75C71F45D79C006344A0 /* TableView.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		254BDE921F4C8C2400B341C2 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 		257B75C11F45D668006344A0 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		257B75C31F45D69D006344A0 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		257B75C71F45D79C006344A0 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				257B75C31F45D69D006344A0 /* Animation.swift */,
 				25F5F9B21EC4AF97008EE65F /* Pagination.swift */,
 				25F5F9B41EC4AFE0008EE65F /* ContentStatusView.swift */,
+				254BDE921F4C8C2400B341C2 /* PreviewViewController.swift */,
 				25F5F9981EC4A4AC008EE65F /* Info.plist */,
 			);
 			path = Utilities;
@@ -230,6 +233,7 @@
 				257B75D21F45DBD1006344A0 /* Graphics.swift in Sources */,
 				25F5F9B51EC4AFE0008EE65F /* ContentStatusView.swift in Sources */,
 				25F5F9B31EC4AF97008EE65F /* Pagination.swift in Sources */,
+				254BDE931F4C8C2400B341C2 /* PreviewViewController.swift in Sources */,
 				257B75D01F45DB28006344A0 /* TraitCollection.swift in Sources */,
 				257B75C81F45D79C006344A0 /* TableView.swift in Sources */,
 				257B75CC1F45D7B4006344A0 /* Images.swift in Sources */,
