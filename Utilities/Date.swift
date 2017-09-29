@@ -46,6 +46,11 @@ extension Date {
 		return calendar().compare(self, to: threeMonthsAgo!, toGranularity: .month) == .orderedAscending
 	}
 	
+	public func isBeforeTwoWeeksAgo() -> Bool {
+		let twoWeeksAgo = calendar().date(byAdding: .day, value: -14, to: Date())
+		return calendar().compare(self, to: twoWeeksAgo!, toGranularity: .day) == .orderedAscending
+	}
+	
 	public func isYesterday() -> Bool {
 		return calendar().isDateInYesterday(self)
 	}
