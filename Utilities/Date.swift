@@ -14,7 +14,6 @@ extension DateFormatter {
 	public static let shared: DateFormatter = {
 		let formatter = DateFormatter()
 		formatter.locale = Locale(identifier: "en_US_POSIX")
-		formatter.timeZone = TimeZone(secondsFromGMT: 0)
 		formatter.isLenient = true
 		return formatter
 	}()
@@ -23,62 +22,56 @@ extension DateFormatter {
 // MARK: - Helpers
 
 extension Date {
-	private func calendar() -> Calendar {
-		var calendar = Calendar.current
-		calendar.timeZone = TimeZone(secondsFromGMT: 0)!
-		return calendar
-	}
-	
 	public func year() -> Int {
-		return calendar().dateComponents([.year], from: self).year!
+		return Calendar.current.dateComponents([.year], from: self).year!
 	}
 	
 	public func isInThePast() -> Bool {
-		return calendar().compare(self, to: Date(), toGranularity: .day) == .orderedAscending
+		return Calendar.current.compare(self, to: Date(), toGranularity: .day) == .orderedAscending
 	}
 	
 	public func isInTheFuture() -> Bool {
-		return calendar().compare(self, to: Date(), toGranularity: .day) == .orderedDescending
+		return Calendar.current.compare(self, to: Date(), toGranularity: .day) == .orderedDescending
 	}
 	
 	public func isBeforeThreeMonthsAgo() -> Bool {
-		let threeMonthsAgo = calendar().date(byAdding: .month, value: -3, to: Date())
-		return calendar().compare(self, to: threeMonthsAgo!, toGranularity: .month) == .orderedAscending
+		let threeMonthsAgo = Calendar.current.date(byAdding: .month, value: -3, to: Date())
+		return Calendar.current.compare(self, to: threeMonthsAgo!, toGranularity: .month) == .orderedAscending
 	}
 	
 	public func isInTheLastTwoWeeks() -> Bool {
-		let twoWeeksAgo = calendar().date(byAdding: .day, value: -14, to: Date())
-		return calendar().compare(self, to: twoWeeksAgo!, toGranularity: .day) == .orderedDescending
+		let twoWeeksAgo = Calendar.current.date(byAdding: .day, value: -14, to: Date())
+		return Calendar.current.compare(self, to: twoWeeksAgo!, toGranularity: .day) == .orderedDescending
 	}
 	
 	public func isYesterday() -> Bool {
-		return calendar().isDateInYesterday(self)
+		return Calendar.current.isDateInYesterday(self)
 	}
 	
 	public func isToday() -> Bool {
-		return calendar().isDateInToday(self)
+		return Calendar.current.isDateInToday(self)
 	}
 	
 	public func isTomorrow() -> Bool {
-		return calendar().isDateInTomorrow(self)
+		return Calendar.current.isDateInTomorrow(self)
 	}
 	
 	public func isThisWeek() -> Bool {
-		let sixDaysFromNow = calendar().date(byAdding: .day, value: 6, to: Date())
+		let sixDaysFromNow = Calendar.current.date(byAdding: .day, value: 6, to: Date())
 		return isInTheFuture() && self < sixDaysFromNow!
 	}
 	
 	public func isThisMonth() -> Bool {
-		return calendar().isDate(self, equalTo: Date(), toGranularity: .month)
+		return Calendar.current.isDate(self, equalTo: Date(), toGranularity: .month)
 	}
 	
 	public func isNextMonth() -> Bool {
-		let nextMonth = calendar().date(byAdding: .month, value: 1, to: Date())
-		return calendar().isDate(self, equalTo: nextMonth!, toGranularity: .month)
+		let nextMonth = Calendar.current.date(byAdding: .month, value: 1, to: Date())
+		return Calendar.current.isDate(self, equalTo: nextMonth!, toGranularity: .month)
 	}
 	
 	public func isThisYear() -> Bool {
-		return calendar().isDate(self, equalTo: Date(), toGranularity: .year)
+		return Calendar.current.isDate(self, equalTo: Date(), toGranularity: .year)
 	}
 	
 	public func isNextYear() -> Bool {
