@@ -39,9 +39,9 @@ extension Date {
 		return Calendar.current.compare(self, to: threeMonthsAgo!, toGranularity: .month) == .orderedAscending
 	}
 	
-	public func isInTheLastTwoWeeks() -> Bool {
-		let twoWeeksAgo = Calendar.current.date(byAdding: .day, value: -14, to: Date())
-		return Calendar.current.compare(self, to: twoWeeksAgo!, toGranularity: .day) == .orderedDescending
+	public func isInTheLastWeek() -> Bool {
+		let oneWeekAgo = Calendar.current.date(byAdding: .day, value: -7, to: Date())
+		return Calendar.current.compare(self, to: oneWeekAgo!, toGranularity: .day) == .orderedDescending
 	}
 	
 	public func isYesterday() -> Bool {
