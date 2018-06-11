@@ -9,7 +9,7 @@
 import Foundation
 
 extension Array {
-	public func split(itemsPerSegment: IndexDistance) -> [[Element]] {
+	public func split(itemsPerSegment: Int) -> [[Element]] {
 		let sequence = stride(from: startIndex, to: endIndex, by: itemsPerSegment)
 		
 		return sequence.map({
