@@ -22,6 +22,7 @@
 		7925873722A420FD00A83B4B /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7925873622A420FD00A83B4B /* DateFormatter+Extensions.swift */; };
 		7925873922A4213D00A83B4B /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7925873822A4213D00A83B4B /* Date+Extensions.swift */; };
 		7925873B22A435AB00A83B4B /* Bool+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7925873A22A435AB00A83B4B /* Bool+Extensions.swift */; };
+		7925873F22A4384200A83B4B /* SnapFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7925873E22A4384200A83B4B /* SnapFlowLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		7925873622A420FD00A83B4B /* DateFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extensions.swift"; sourceTree = "<group>"; };
 		7925873822A4213D00A83B4B /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		7925873A22A435AB00A83B4B /* Bool+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+Extensions.swift"; sourceTree = "<group>"; };
+		7925873E22A4384200A83B4B /* SnapFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapFlowLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				7925872822A41DA000A83B4B /* UIImage+Extensions.swift */,
 				7925873222A41EE800A83B4B /* UITableView+Extensions.swift */,
 				7925872622A41D8200A83B4B /* UIView+Extensions.swift */,
+				7925873E22A4384200A83B4B /* SnapFlowLayout.swift */,
 				25F5F9B21EC4AF97008EE65F /* Pagination.swift */,
 				25F5F9B41EC4AFE0008EE65F /* ContentStatusView.swift */,
 				25F5F9981EC4A4AC008EE65F /* Info.plist */,
@@ -246,6 +249,7 @@
 				7925873322A41EE800A83B4B /* UITableView+Extensions.swift in Sources */,
 				7925873922A4213D00A83B4B /* Date+Extensions.swift in Sources */,
 				7925873B22A435AB00A83B4B /* Bool+Extensions.swift in Sources */,
+				7925873F22A4384200A83B4B /* SnapFlowLayout.swift in Sources */,
 				7925872922A41DA000A83B4B /* UIImage+Extensions.swift in Sources */,
 				7925873122A41EC000A83B4B /* Sequence+Extensions.swift in Sources */,
 				7925873722A420FD00A83B4B /* DateFormatter+Extensions.swift in Sources */,
