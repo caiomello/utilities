@@ -53,7 +53,7 @@ extension ContentStatusView {
 // MARK: - Mode
 
 extension ContentStatusView {
-	fileprivate func configure(withMode mode: ContentStatusViewMode) {
+	private func configure(withMode mode: ContentStatusViewMode) {
 		switch mode {
 		case .hidden:
 			isHidden = true
@@ -97,7 +97,7 @@ extension ContentStatusView {
 // MARK: - Actions
 
 extension ContentStatusView {
-	@IBAction fileprivate func buttonAction(_ sender: UIButton) {
+	@IBAction private func buttonAction(_ sender: UIButton) {
 		buttonAction()
 	}
 }

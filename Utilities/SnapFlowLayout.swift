@@ -8,8 +8,8 @@
 
 import UIKit
 
-final class SnapFlowLayout: UICollectionViewFlowLayout {
-    override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
+public final class SnapFlowLayout: UICollectionViewFlowLayout {
+    override public func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
         guard let collectionView = collectionView else {
             return super.targetContentOffset(forProposedContentOffset: proposedContentOffset, withScrollingVelocity: velocity)
         }
@@ -42,7 +42,7 @@ final class SnapFlowLayout: UICollectionViewFlowLayout {
                        y: proposedContentOffset.y)
     }
 
-    override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
+    override public func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
         return true
     }
 }

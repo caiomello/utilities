@@ -25,9 +25,9 @@ extension UIView {
     }
 
     public func animate(withDuration duration: TimeInterval,
-                 after: TimeInterval = 0,
-                 animations: @escaping () -> Void,
-                 completion: @escaping () -> Void = {}) {
+                        after: TimeInterval = 0,
+                        animations: @escaping () -> Void,
+                        completion: @escaping () -> Void = {}) {
 
         let animator = UIViewPropertyAnimator(duration: duration, dampingRatio: 1, animations: animations)
         animator.addCompletion { _ in completion() }
@@ -68,128 +68,5 @@ extension UIView {
         layer.shadowRadius = radius
         layer.shouldRasterize = true
         layer.rasterizationScale = UIScreen.main.scale
-    }
-}
-
-// MARK: - Layout
-
-extension UIView {
-    public func addWidthConstraint(withValue value: CGFloat) {
-        addConstraint(NSLayoutConstraint(item: self,
-                                         attribute: .width,
-                                         relatedBy: .equal,
-                                         toItem: nil,
-                                         attribute: .notAnAttribute,
-                                         multiplier: 1,
-                                         constant: value))
-    }
-
-    public func addHeightConstraint(withValue value: CGFloat) {
-        addConstraint(NSLayoutConstraint(item: self,
-                                         attribute: .height,
-                                         relatedBy: .equal,
-                                         toItem: nil,
-                                         attribute: .notAnAttribute,
-                                         multiplier: 1,
-                                         constant: value))
-    }
-
-    public func addAspectRatioConstraint(ratio: CGFloat) {
-        addConstraint(NSLayoutConstraint(item: self,
-                                         attribute: .width,
-                                         relatedBy: .equal,
-                                         toItem: self,
-                                         attribute: .height,
-                                         multiplier: ratio,
-                                         constant: 0))
-    }
-
-    public func addConstraint(toItem view: UIView?, attribute: NSLayoutConstraint.Attribute, constant: CGFloat = 0.0) {
-        superview?.addConstraint(
-            NSLayoutConstraint(
-                item: self,
-                attribute: attribute,
-                relatedBy: .equal,
-                toItem: view,
-                attribute: attribute,
-                multiplier: 1.0,
-                constant: constant
-            )
-        )
-    }
-
-    public func fitVerticalEdges(to view: UIView?) {
-        addConstraint(toItem: view, attribute: .top)
-        addConstraint(toItem: view, attribute: .bottom)
-    }
-
-    public func fitHorizontalEdges(to view: UIView?) {
-        addConstraint(toItem: view, attribute: .trailing)
-        addConstraint(toItem: view, attribute: .leading)
-    }
-
-    public func fit(to view: UIView?) {
-        fitVerticalEdges(to: view)
-        fitHorizontalEdges(to: view)
-    }
-
-    public func fitVerticalEdgesToSuperview(obeyMargins: Bool = false) {
-        superview?.addConstraints(
-            NSLayoutConstraint.constraints(
-                withVisualFormat: obeyMargins ? "V:|-[view]-|" : "V:|[view]|",
-                options: [],
-                metrics: nil,
-                views: ["view": self]
-            )
-        )
-    }
-
-    public func fitHorizontalEdgesToSuperview(obeyMargins: Bool = false) {
-        superview?.addConstraints(
-            NSLayoutConstraint.constraints(
-                withVisualFormat: obeyMargins ? "H:|-[view]-|" : "H:|[view]|",
-                options: [],
-                metrics: nil,
-                views: ["view": self]
-            )
-        )
-    }
-
-    public func fitToSuperview(obeyMargins: Bool = false) {
-        fitVerticalEdgesToSuperview(obeyMargins: obeyMargins)
-        fitHorizontalEdgesToSuperview(obeyMargins: obeyMargins)
-    }
-
-    public func centerHorizontallyToSuperview() {
-        superview?.addConstraint(
-            NSLayoutConstraint(
-                item: self,
-                attribute: .centerX,
-                relatedBy: .equal,
-                toItem: superview,
-                attribute: .centerX,
-                multiplier: 1,
-                constant: 0
-            )
-        )
-    }
-
-    public func centerVerticallyToSuperview() {
-        superview?.addConstraint(
-            NSLayoutConstraint(
-                item: self,
-                attribute: .centerY,
-                relatedBy: .equal,
-                toItem: superview,
-                attribute: .centerY,
-                multiplier: 1,
-                constant: 0
-            )
-        )
-    }
-
-    public func centerToSuperview() {
-        centerHorizontallyToSuperview()
-        centerVerticallyToSuperview()
     }
 }

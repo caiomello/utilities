@@ -9,23 +9,23 @@
 import UIKit
 
 extension UITableView {
-    func registerCell<T: UITableViewCell>(_ cellClass: T.Type) {
+    public func registerCell<T: UITableViewCell>(_ cellClass: T.Type) {
         register(UINib(nibName: "\(T.self)", bundle: nil), forCellReuseIdentifier: "\(T.self)")
     }
 
-    func registerHeader<T: UITableViewHeaderFooterView>(_ headerClass: T.Type) {
+    public func registerHeader<T: UITableViewHeaderFooterView>(_ headerClass: T.Type) {
         register(UINib(nibName: "\(T.self)", bundle: nil), forHeaderFooterViewReuseIdentifier: "\(T.self)")
     }
 
-    func dequeueCell<T: UITableViewCell>(forRowAt indexPath: IndexPath) -> T {
+    public func dequeueCell<T: UITableViewCell>(forRowAt indexPath: IndexPath) -> T {
         return dequeueReusableCell(withIdentifier: "\(T.self)", for: indexPath) as! T
     }
 
-    func dequeueHeader<T: UITableViewHeaderFooterView>() -> T {
+    public func dequeueHeader<T: UITableViewHeaderFooterView>() -> T {
         return dequeueReusableHeaderFooterView(withIdentifier: "\(T.self)") as! T
     }
 
-    func hideLastSeparators() {
+    public func hideLastSeparators() {
         tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
     }
 }
