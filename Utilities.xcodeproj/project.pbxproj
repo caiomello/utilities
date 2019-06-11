@@ -23,6 +23,7 @@
 		7925873922A4213D00A83B4B /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7925873822A4213D00A83B4B /* Date+Extensions.swift */; };
 		7925873B22A435AB00A83B4B /* Bool+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7925873A22A435AB00A83B4B /* Bool+Extensions.swift */; };
 		7925873F22A4384200A83B4B /* SnapFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7925873E22A4384200A83B4B /* SnapFlowLayout.swift */; };
+		79C9B7C422AFFC550009F090 /* UICollectionViewFlowLayout+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C9B7C322AFFC550009F090 /* UICollectionViewFlowLayout+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		7925873822A4213D00A83B4B /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		7925873A22A435AB00A83B4B /* Bool+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+Extensions.swift"; sourceTree = "<group>"; };
 		7925873E22A4384200A83B4B /* SnapFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapFlowLayout.swift; sourceTree = "<group>"; };
+		79C9B7C322AFFC550009F090 /* UICollectionViewFlowLayout+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewFlowLayout+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				7925873622A420FD00A83B4B /* DateFormatter+Extensions.swift */,
 				7925873022A41EC000A83B4B /* Sequence+Extensions.swift */,
 				7925873422A41EEF00A83B4B /* UICollectionView+Extensions.swift */,
+				79C9B7C322AFFC550009F090 /* UICollectionViewFlowLayout+Extensions.swift */,
 				7925872822A41DA000A83B4B /* UIImage+Extensions.swift */,
 				7925873222A41EE800A83B4B /* UITableView+Extensions.swift */,
 				7925872622A41D8200A83B4B /* UIView+Extensions.swift */,
@@ -251,6 +254,7 @@
 				7925873B22A435AB00A83B4B /* Bool+Extensions.swift in Sources */,
 				7925873F22A4384200A83B4B /* SnapFlowLayout.swift in Sources */,
 				7925872922A41DA000A83B4B /* UIImage+Extensions.swift in Sources */,
+				79C9B7C422AFFC550009F090 /* UICollectionViewFlowLayout+Extensions.swift in Sources */,
 				7925873122A41EC000A83B4B /* Sequence+Extensions.swift in Sources */,
 				7925873722A420FD00A83B4B /* DateFormatter+Extensions.swift in Sources */,
 				7925872D22A41E6500A83B4B /* CGSize+Extensions.swift in Sources */,
