@@ -16,4 +16,10 @@ extension UICollectionView {
     public func dequeueCell<T: UICollectionViewCell>(forItemAt indexPath: IndexPath) -> T {
         return dequeueReusableCell(withReuseIdentifier: "\(T.self)", for: indexPath) as! T
     }
+
+    public func scrollToTop(animated: Bool = false) {
+        if numberOfItems(inSection: 0) > 0 {
+            scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: animated)
+        }
+    }
 }
