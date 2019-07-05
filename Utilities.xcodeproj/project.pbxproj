@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		25168BE322CFCF8D00EDA788 /* PaginatedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25168BE222CFCF8D00EDA788 /* PaginatedList.swift */; };
 		25168BE922CFD4D200EDA788 /* UICollectionViewCompositionalLayout+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25168BE822CFD4D200EDA788 /* UICollectionViewCompositionalLayout+Extensions.swift */; };
+		25168BEB22CFD88200EDA788 /* NSDirectionalEdgeInsets+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25168BEA22CFD88200EDA788 /* NSDirectionalEdgeInsets+Extensions.swift */; };
 		25F5F99E1EC4A4AC008EE65F /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F5F9941EC4A4AC008EE65F /* Utilities.framework */; };
 		25F5F9B31EC4AF97008EE65F /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F5F9B21EC4AF97008EE65F /* Pagination.swift */; };
 		25F5F9B51EC4AFE0008EE65F /* ContentStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F5F9B41EC4AFE0008EE65F /* ContentStatusView.swift */; };
@@ -41,6 +42,7 @@
 /* Begin PBXFileReference section */
 		25168BE222CFCF8D00EDA788 /* PaginatedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginatedList.swift; sourceTree = "<group>"; };
 		25168BE822CFD4D200EDA788 /* UICollectionViewCompositionalLayout+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCompositionalLayout+Extensions.swift"; sourceTree = "<group>"; };
+		25168BEA22CFD88200EDA788 /* NSDirectionalEdgeInsets+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSDirectionalEdgeInsets+Extensions.swift"; sourceTree = "<group>"; };
 		25F5F9941EC4A4AC008EE65F /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		25F5F9981EC4A4AC008EE65F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		25F5F99D1EC4A4AC008EE65F /* UtilitiesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UtilitiesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +122,7 @@
 				7925873E22A4384200A83B4B /* SnapFlowLayout.swift */,
 				25F5F9B21EC4AF97008EE65F /* Pagination.swift */,
 				25168BE222CFCF8D00EDA788 /* PaginatedList.swift */,
+				25168BEA22CFD88200EDA788 /* NSDirectionalEdgeInsets+Extensions.swift */,
 				25F5F9B41EC4AFE0008EE65F /* ContentStatusView.swift */,
 				25F5F9981EC4A4AC008EE65F /* Info.plist */,
 			);
@@ -257,6 +260,7 @@
 				7925872522A41CF600A83B4B /* ColumnFlowLayout.swift in Sources */,
 				7925872F22A41EB800A83B4B /* Array+Extensions.swift in Sources */,
 				7925873322A41EE800A83B4B /* UITableView+Extensions.swift in Sources */,
+				25168BEB22CFD88200EDA788 /* NSDirectionalEdgeInsets+Extensions.swift in Sources */,
 				7925873922A4213D00A83B4B /* Date+Extensions.swift in Sources */,
 				7925873B22A435AB00A83B4B /* Bool+Extensions.swift in Sources */,
 				7925873F22A4384200A83B4B /* SnapFlowLayout.swift in Sources */,
