@@ -70,3 +70,34 @@ extension UIView {
         layer.rasterizationScale = UIScreen.main.scale
     }
 }
+
+// MARK: - Auto Layout
+
+extension UIView {
+    func fitVerticalEdgesToSuperview(obeyMargins: Bool = false) {
+        superview?.addConstraints(
+            NSLayoutConstraint.constraints(
+                withVisualFormat: obeyMargins ? "V:|-[view]-|" : "V:|[view]|",
+                options: [],
+                metrics: nil,
+                views: ["view": self]
+            )
+        )
+    }
+
+    func fitHorizontalEdgesToSuperview(obeyMargins: Bool = false) {
+        superview?.addConstraints(
+            NSLayoutConstraint.constraints(
+                withVisualFormat: obeyMargins ? "H:|-[view]-|" : "H:|[view]|",
+                options: [],
+                metrics: nil,
+                views: ["view": self]
+            )
+        )
+    }
+
+    func fitToSuperview(obeyMargins: Bool = false) {
+        fitVerticalEdgesToSuperview(obeyMargins: obeyMargins)
+        fitHorizontalEdgesToSuperview(obeyMargins: obeyMargins)
+    }
+}
