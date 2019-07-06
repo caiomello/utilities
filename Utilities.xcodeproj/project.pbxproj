@@ -12,7 +12,6 @@
 		25168BEB22CFD88200EDA788 /* NSDirectionalEdgeInsets+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25168BEA22CFD88200EDA788 /* NSDirectionalEdgeInsets+Extensions.swift */; };
 		25F5F99E1EC4A4AC008EE65F /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F5F9941EC4A4AC008EE65F /* Utilities.framework */; };
 		25F5F9B31EC4AF97008EE65F /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F5F9B21EC4AF97008EE65F /* Pagination.swift */; };
-		25F5F9B51EC4AFE0008EE65F /* ContentStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F5F9B41EC4AFE0008EE65F /* ContentStatusView.swift */; };
 		7925872522A41CF600A83B4B /* ColumnFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7925872422A41CF600A83B4B /* ColumnFlowLayout.swift */; };
 		7925872722A41D8200A83B4B /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7925872622A41D8200A83B4B /* UIView+Extensions.swift */; };
 		7925872922A41DA000A83B4B /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7925872822A41DA000A83B4B /* UIImage+Extensions.swift */; };
@@ -48,7 +47,6 @@
 		25F5F99D1EC4A4AC008EE65F /* UtilitiesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UtilitiesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		25F5F9A41EC4A4AC008EE65F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		25F5F9B21EC4AF97008EE65F /* Pagination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
-		25F5F9B41EC4AFE0008EE65F /* ContentStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentStatusView.swift; sourceTree = "<group>"; };
 		7925872422A41CF600A83B4B /* ColumnFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnFlowLayout.swift; sourceTree = "<group>"; };
 		7925872622A41D8200A83B4B /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		7925872822A41DA000A83B4B /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
@@ -110,7 +108,6 @@
 				7925872A22A41E4600A83B4B /* CGRect+Extensions.swift */,
 				7925872C22A41E6500A83B4B /* CGSize+Extensions.swift */,
 				7925872422A41CF600A83B4B /* ColumnFlowLayout.swift */,
-				25F5F9B41EC4AFE0008EE65F /* ContentStatusView.swift */,
 				7925873822A4213D00A83B4B /* Date+Extensions.swift */,
 				7925873622A420FD00A83B4B /* DateFormatter+Extensions.swift */,
 				25168BEA22CFD88200EDA788 /* NSDirectionalEdgeInsets+Extensions.swift */,
@@ -253,7 +250,6 @@
 			files = (
 				25168BE922CFD4D200EDA788 /* UICollectionViewCompositionalLayout+Extensions.swift in Sources */,
 				7925873522A41EEF00A83B4B /* UICollectionView+Extensions.swift in Sources */,
-				25F5F9B51EC4AFE0008EE65F /* ContentStatusView.swift in Sources */,
 				25F5F9B31EC4AF97008EE65F /* Pagination.swift in Sources */,
 				7925872B22A41E4600A83B4B /* CGRect+Extensions.swift in Sources */,
 				7925872722A41D8200A83B4B /* UIView+Extensions.swift in Sources */,
