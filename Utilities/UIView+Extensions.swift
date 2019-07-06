@@ -74,7 +74,7 @@ extension UIView {
 // MARK: - Auto Layout
 
 extension UIView {
-    func fitVerticalEdgesToSuperview(obeyMargins: Bool = false) {
+    public func fitVerticalEdgesToSuperview(obeyMargins: Bool = false) {
         superview?.addConstraints(
             NSLayoutConstraint.constraints(
                 withVisualFormat: obeyMargins ? "V:|-[view]-|" : "V:|[view]|",
@@ -85,7 +85,7 @@ extension UIView {
         )
     }
 
-    func fitHorizontalEdgesToSuperview(obeyMargins: Bool = false) {
+    public func fitHorizontalEdgesToSuperview(obeyMargins: Bool = false) {
         superview?.addConstraints(
             NSLayoutConstraint.constraints(
                 withVisualFormat: obeyMargins ? "H:|-[view]-|" : "H:|[view]|",
@@ -96,7 +96,7 @@ extension UIView {
         )
     }
 
-    func fitToSuperview(obeyMargins: Bool = false) {
+    public func fitToSuperview(obeyMargins: Bool = false) {
         fitVerticalEdgesToSuperview(obeyMargins: obeyMargins)
         fitHorizontalEdgesToSuperview(obeyMargins: obeyMargins)
     }
