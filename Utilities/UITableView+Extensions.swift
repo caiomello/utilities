@@ -25,7 +25,7 @@ extension UITableView {
         return dequeueReusableHeaderFooterView(withIdentifier: "\(T.self)") as! T
     }
 
-    public func hideLastSeparators() {
+    public func hideTrailingSeparators() {
         tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
     }
 
