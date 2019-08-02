@@ -20,7 +20,7 @@ extension UIView {
 // MARK: - Interface Builder
 
 extension UIView {
-    static var isInterfaceBuilder: Bool {
+    public static var isInterfaceBuilder: Bool {
         #if TARGET_INTERFACE_BUILDER
         return true
         #else
