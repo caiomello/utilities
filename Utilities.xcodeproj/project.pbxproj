@@ -10,6 +10,7 @@
 		25168BE322CFCF8D00EDA788 /* PaginatedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25168BE222CFCF8D00EDA788 /* PaginatedList.swift */; };
 		25168BE922CFD4D200EDA788 /* UICollectionViewCompositionalLayout+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25168BE822CFD4D200EDA788 /* UICollectionViewCompositionalLayout+Extensions.swift */; };
 		25168BEB22CFD88200EDA788 /* NSDirectionalEdgeInsets+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25168BEA22CFD88200EDA788 /* NSDirectionalEdgeInsets+Extensions.swift */; };
+		254728F722F6563A0009C5E4 /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254728F622F6563A0009C5E4 /* UIStackView+Extensions.swift */; };
 		25601F8622DE5DEC00B4060D /* UITraitCollection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25601F8522DE5DEC00B4060D /* UITraitCollection+Extensions.swift */; };
 		2582C36022E242BA00238CA1 /* UIScrollView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2582C35F22E242BA00238CA1 /* UIScrollView+Extensions.swift */; };
 		25F5F99E1EC4A4AC008EE65F /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F5F9941EC4A4AC008EE65F /* Utilities.framework */; };
@@ -44,6 +45,7 @@
 		25168BE222CFCF8D00EDA788 /* PaginatedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginatedList.swift; sourceTree = "<group>"; };
 		25168BE822CFD4D200EDA788 /* UICollectionViewCompositionalLayout+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCompositionalLayout+Extensions.swift"; sourceTree = "<group>"; };
 		25168BEA22CFD88200EDA788 /* NSDirectionalEdgeInsets+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSDirectionalEdgeInsets+Extensions.swift"; sourceTree = "<group>"; };
+		254728F622F6563A0009C5E4 /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
 		25601F8522DE5DEC00B4060D /* UITraitCollection+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITraitCollection+Extensions.swift"; sourceTree = "<group>"; };
 		2582C35F22E242BA00238CA1 /* UIScrollView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extensions.swift"; sourceTree = "<group>"; };
 		25F5F9941EC4A4AC008EE65F /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +127,7 @@
 				7925872822A41DA000A83B4B /* UIImage+Extensions.swift */,
 				7925873222A41EE800A83B4B /* UITableView+Extensions.swift */,
 				2582C35F22E242BA00238CA1 /* UIScrollView+Extensions.swift */,
+				254728F622F6563A0009C5E4 /* UIStackView+Extensions.swift */,
 				25601F8522DE5DEC00B4060D /* UITraitCollection+Extensions.swift */,
 				7925872622A41D8200A83B4B /* UIView+Extensions.swift */,
 				25F5F9981EC4A4AC008EE65F /* Info.plist */,
@@ -272,6 +275,7 @@
 				79C9B7C422AFFC550009F090 /* UICollectionViewFlowLayout+Extensions.swift in Sources */,
 				7925873122A41EC000A83B4B /* Sequence+Extensions.swift in Sources */,
 				25168BE322CFCF8D00EDA788 /* PaginatedList.swift in Sources */,
+				254728F722F6563A0009C5E4 /* UIStackView+Extensions.swift in Sources */,
 				7925873722A420FD00A83B4B /* DateFormatter+Extensions.swift in Sources */,
 				7925872D22A41E6500A83B4B /* CGSize+Extensions.swift in Sources */,
 			);
