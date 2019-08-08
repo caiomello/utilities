@@ -107,7 +107,7 @@ extension Date {
             return "Tomorrow"
         } else if isThisWeek() {
             DateFormatter.shared.dateFormat = "EEEE"
-        } else if isThisYear() {
+        } else if isThisYear(), isInTheFuture() {
             DateFormatter.shared.dateFormat = short ? "MMM d" : "MMMM d"
         } else {
             DateFormatter.shared.dateFormat = short ? "MMM d, yyyy" : "MMMM d, yyyy"
