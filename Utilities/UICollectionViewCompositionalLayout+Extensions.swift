@@ -9,9 +9,15 @@
 import UIKit
 
 extension UICollectionViewCompositionalLayout {
-    public class func columnCompositionalLayout(numberOfColumnsCompact: Int, numberOfColumnsRegular: Int, itemAspectRatio: CGSize, spacing: CGFloat, insets: NSDirectionalEdgeInsets) -> UICollectionViewCompositionalLayout {
+    public class func gridCompositionalLayout(itemAspectRatio: CGSize, spacing: CGFloat, insets: NSDirectionalEdgeInsets) -> UICollectionViewCompositionalLayout {
         return UICollectionViewCompositionalLayout { (section: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
-            let numberOfColumns = layoutEnvironment.traitCollection.horizontalSizeClass == .compact ? numberOfColumnsCompact : numberOfColumnsRegular
+            let numberOfColumns: Int = {
+                switch layoutEnvironment.container.effectiveContentSize.width {
+                case 0...500: return 3
+                case 501...800: return 5
+                default: return 7
+                }
+            }()
 
             let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(itemAspectRatio.width/itemAspectRatio.height),
                                                   heightDimension: .fractionalHeight(1))
