@@ -9,11 +9,19 @@
 import UIKit
 
 extension UICollectionView {
-    public func registerCell<T: UICollectionViewCell>(_ cellClass: T.Type) {
+    public func registerCell<T: UICollectionViewCell>(_ type: T.Type) {
         register(UINib(nibName: "\(T.self)", bundle: nil), forCellWithReuseIdentifier: "\(T.self)")
+    }
+
+    public func registerSupplementaryView<T: UICollectionReusableView>(ofKind kind: String, _ type: T.Type) {
+        register(UINib(nibName: "\(T.self)", bundle: nil), forSupplementaryViewOfKind: kind, withReuseIdentifier: "\(T.self)")
     }
 
     public func dequeueCell<T: UICollectionViewCell>(forItemAt indexPath: IndexPath) -> T {
         return dequeueReusableCell(withReuseIdentifier: "\(T.self)", for: indexPath) as! T
+    }
+
+    public func dequeueSupplementaryView<T: UICollectionReusableView>(ofKind kind: String, at indexPath: IndexPath) -> T {
+        return dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "\(T.self)", for: indexPath) as! T
     }
 }
