@@ -13,7 +13,7 @@ extension UICollectionView {
         register(UINib(nibName: "\(T.self)", bundle: nil), forCellWithReuseIdentifier: "\(T.self)")
     }
 
-    public func registerSupplementaryView<T: UICollectionReusableView>(ofKind kind: String, _ type: T.Type) {
+    public func registerSupplementaryView<T: UICollectionReusableView>(_ type: T.Type, ofKind kind: String) {
         register(UINib(nibName: "\(T.self)", bundle: nil), forSupplementaryViewOfKind: kind, withReuseIdentifier: "\(T.self)")
     }
 
