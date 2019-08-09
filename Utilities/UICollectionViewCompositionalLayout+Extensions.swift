@@ -9,7 +9,7 @@
 import UIKit
 
 extension UICollectionViewCompositionalLayout {
-    public class func gridCompositionalLayout(itemAspectRatio: CGSize, spacing: CGFloat, insets: NSDirectionalEdgeInsets) -> UICollectionViewCompositionalLayout {
+    public class func gridCompositionalLayout(itemAspectRatio: CGSize, spacing: CGFloat, insets: NSDirectionalEdgeInsets, headerKind: String? = nil) -> UICollectionViewCompositionalLayout {
         return UICollectionViewCompositionalLayout { (section: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
             let numberOfColumns: Int = {
                 switch layoutEnvironment.container.effectiveContentSize.width {
@@ -19,11 +19,13 @@ extension UICollectionViewCompositionalLayout {
                 }
             }()
 
+            // Item
             let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(itemAspectRatio.width/itemAspectRatio.height),
                                                   heightDimension: .fractionalHeight(1))
 
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
 
+            // Group
             let groupHeight: CGFloat = {
                 let totalSpacing = spacing * (CGFloat(numberOfColumns) - 1)
                 let horizontalInsets = insets.leading + insets.trailing
@@ -39,9 +41,21 @@ extension UICollectionViewCompositionalLayout {
             let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: numberOfColumns)
             group.interItemSpacing = .fixed(spacing)
 
+            // Section
             let section = NSCollectionLayoutSection(group: group)
             section.interGroupSpacing = spacing
             section.contentInsets = insets
+
+            // Header
+            if let headerKind = headerKind {
+                let sectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                                               heightDimension: .estimated(44))
+
+                let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: sectionHeaderSize, elementKind: headerKind, alignment: .top)
+                sectionHeader.pinToVisibleBounds = true
+
+                section.boundarySupplementaryItems = [sectionHeader]
+            }
 
             return section
         }
