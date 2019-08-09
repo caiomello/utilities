@@ -9,7 +9,7 @@
 import UIKit
 
 extension UICollectionViewCompositionalLayout {
-    public class func gridCompositionalLayout(itemAspectRatio: CGSize, spacing: CGFloat, insets: NSDirectionalEdgeInsets, headerKind: String? = nil) -> UICollectionViewCompositionalLayout {
+    public class func gridCompositionalLayout(itemAspectRatio: CGSize, spacing: CGFloat, insets: NSDirectionalEdgeInsets, headerViewOfKind: String? = nil) -> UICollectionViewCompositionalLayout {
         return UICollectionViewCompositionalLayout { (section: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
             let numberOfColumns: Int = {
                 switch layoutEnvironment.container.effectiveContentSize.width {
@@ -47,11 +47,11 @@ extension UICollectionViewCompositionalLayout {
             section.contentInsets = insets
 
             // Header
-            if let headerKind = headerKind {
+            if let headerViewOfKind = headerViewOfKind {
                 let sectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
                                                                heightDimension: .estimated(44))
 
-                let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: sectionHeaderSize, elementKind: headerKind, alignment: .top)
+                let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: sectionHeaderSize, elementKind: headerViewOfKind, alignment: .top)
                 sectionHeader.pinToVisibleBounds = true
 
                 section.boundarySupplementaryItems = [sectionHeader]
