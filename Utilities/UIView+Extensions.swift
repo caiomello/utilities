@@ -112,4 +112,37 @@ extension UIView {
         fitVerticalEdgesToSuperview(obeyMargins: obeyMargins)
         fitHorizontalEdgesToSuperview(obeyMargins: obeyMargins)
     }
+
+    public func centerHorizontallyToSuperview() {
+        superview?.addConstraint(
+            NSLayoutConstraint(
+                item: self,
+                attribute: .centerX,
+                relatedBy: .equal,
+                toItem: superview,
+                attribute: .centerX,
+                multiplier: 1,
+                constant: 0
+            )
+        )
+    }
+
+    public func centerVerticallyToSuperview() {
+        superview?.addConstraint(
+            NSLayoutConstraint(
+                item: self,
+                attribute: .centerY,
+                relatedBy: .equal,
+                toItem: superview,
+                attribute: .centerY,
+                multiplier: 1,
+                constant: 0
+            )
+        )
+    }
+
+    public func centerToSuperview() {
+        centerHorizontallyToSuperview()
+        centerVerticallyToSuperview()
+    }
 }
