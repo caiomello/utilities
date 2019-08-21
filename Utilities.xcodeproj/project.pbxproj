@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		25108E0E230DBECF00D93C81 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25108E0D230DBECF00D93C81 /* UIViewController+Extensions.swift */; };
 		25168BE322CFCF8D00EDA788 /* PaginatedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25168BE222CFCF8D00EDA788 /* PaginatedList.swift */; };
 		25168BE922CFD4D200EDA788 /* UICollectionViewCompositionalLayout+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25168BE822CFD4D200EDA788 /* UICollectionViewCompositionalLayout+Extensions.swift */; };
 		25168BEB22CFD88200EDA788 /* NSDirectionalEdgeInsets+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25168BEA22CFD88200EDA788 /* NSDirectionalEdgeInsets+Extensions.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		25108E0D230DBECF00D93C81 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		25168BE222CFCF8D00EDA788 /* PaginatedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginatedList.swift; sourceTree = "<group>"; };
 		25168BE822CFD4D200EDA788 /* UICollectionViewCompositionalLayout+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCompositionalLayout+Extensions.swift"; sourceTree = "<group>"; };
 		25168BEA22CFD88200EDA788 /* NSDirectionalEdgeInsets+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSDirectionalEdgeInsets+Extensions.swift"; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				254728F622F6563A0009C5E4 /* UIStackView+Extensions.swift */,
 				25601F8522DE5DEC00B4060D /* UITraitCollection+Extensions.swift */,
 				7925872622A41D8200A83B4B /* UIView+Extensions.swift */,
+				25108E0D230DBECF00D93C81 /* UIViewController+Extensions.swift */,
 				25F5F9981EC4A4AC008EE65F /* Info.plist */,
 			);
 			path = Utilities;
@@ -263,6 +266,7 @@
 				7925872B22A41E4600A83B4B /* CGRect+Extensions.swift in Sources */,
 				7925872722A41D8200A83B4B /* UIView+Extensions.swift in Sources */,
 				7925872522A41CF600A83B4B /* ColumnFlowLayout.swift in Sources */,
+				25108E0E230DBECF00D93C81 /* UIViewController+Extensions.swift in Sources */,
 				7925872F22A41EB800A83B4B /* Array+Extensions.swift in Sources */,
 				2582C36022E242BA00238CA1 /* UIScrollView+Extensions.swift in Sources */,
 				7925873322A41EE800A83B4B /* UITableView+Extensions.swift in Sources */,
