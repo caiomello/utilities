@@ -11,67 +11,67 @@ import Foundation
 // MARK: - Helpers
 
 extension Date {
-    public func year() -> Int {
+    public var year: Int {
         return Calendar.current.dateComponents([.year], from: self).year!
     }
 
-    public func isInThePast() -> Bool {
+    public var isInThePast: Bool {
         return Calendar.current.compare(self, to: Date(), toGranularity: .day) == .orderedAscending
     }
 
-    public func isInTheFuture() -> Bool {
+    public var isInTheFuture: Bool {
         return Calendar.current.compare(self, to: Date(), toGranularity: .day) == .orderedDescending
     }
 
-    public func isBeforeThreeMonthsAgo() -> Bool {
+    public var isBeforeThreeMonthsAgo: Bool {
         let threeMonthsAgo = Calendar.current.date(byAdding: .month, value: -3, to: Date())
         return Calendar.current.compare(self, to: threeMonthsAgo!, toGranularity: .month) == .orderedAscending
     }
 
-    public func isInTheLastWeek() -> Bool {
+    public var isInTheLastWeek: Bool {
         let oneWeekAgo = Calendar.current.date(byAdding: .day, value: -7, to: Date())
         return Calendar.current.compare(self, to: oneWeekAgo!, toGranularity: .day) == .orderedDescending
     }
 
-    public func isYesterday() -> Bool {
+    public var isYesterday: Bool {
         return Calendar.current.isDateInYesterday(self)
     }
 
-    public func isToday() -> Bool {
+    public var isToday: Bool {
         return Calendar.current.isDateInToday(self)
     }
 
-    public func isTomorrow() -> Bool {
+    public var isTomorrow: Bool {
         return Calendar.current.isDateInTomorrow(self)
     }
 
-    public func isThisWeek() -> Bool {
+    public var isThisWeek: Bool {
         let sixDaysFromNow = Calendar.current.date(byAdding: .day, value: 6, to: Date())
-        return isInTheFuture() && self < sixDaysFromNow!
+        return isInTheFuture && self < sixDaysFromNow!
     }
 
-    public func isThisMonth() -> Bool {
+    public var isThisMonth: Bool {
         return Calendar.current.isDate(self, equalTo: Date(), toGranularity: .month)
     }
 
-    public func isNextMonth() -> Bool {
+    public var isNextMonth: Bool {
         let nextMonth = Calendar.current.date(byAdding: .month, value: 1, to: Date())
         return Calendar.current.isDate(self, equalTo: nextMonth!, toGranularity: .month)
     }
 
-    public func isThisYear() -> Bool {
+    public var isThisYear: Bool {
         return Calendar.current.isDate(self, equalTo: Date(), toGranularity: .year)
     }
 
-    public func isNextYear() -> Bool {
-        return year() == Date().year() + 1
+    public var isNextYear: Bool {
+        return year == Date().year + 1
     }
 
-    public func isAfterNextYear() -> Bool {
-        return year() > Date().year() + 1
+    public var isAfterNextYear: Bool {
+        return year > Date().year + 1
     }
 
-    public func isUnknown() -> Bool {
+    public var isUnknown: Bool {
         return self == Date.distantPast || self == Date.distantFuture
     }
 }
@@ -88,7 +88,7 @@ extension Date {
     }
 
     public func yearText() -> String? {
-        if isUnknown() {
+        if isUnknown {
             return nil
         }
 
@@ -97,17 +97,17 @@ extension Date {
     }
 
     private func text(short: Bool) -> String? {
-        if isUnknown() {
+        if isUnknown {
             return nil
-        } else if isYesterday() {
+        } else if isYesterday {
             return "Yesterday"
-        } else if isToday() {
+        } else if isToday {
             return "Today"
-        } else if isTomorrow() {
+        } else if isTomorrow {
             return "Tomorrow"
-        } else if isThisWeek() {
+        } else if isThisWeek {
             DateFormatter.shared.dateFormat = "EEEE"
-        } else if isThisYear(), isInTheFuture() {
+        } else if isThisYear, isInTheFuture {
             DateFormatter.shared.dateFormat = short ? "MMM d" : "MMMM d"
         } else {
             DateFormatter.shared.dateFormat = short ? "MMM d, yyyy" : "MMMM d, yyyy"
