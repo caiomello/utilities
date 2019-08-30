@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class ActionButton: UIControl {
+open class ActionButton: UIControl {
     private let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.isUserInteractionEnabled = false

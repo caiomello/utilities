@@ -9,7 +9,7 @@
 import UIKit
 import SafariServices
 
-public class WebViewController: SFSafariViewController {
+open class WebViewController: SFSafariViewController {
     public convenience init(url: URL, tintColor: UIColor) {
         self.init(url: url)
         preferredControlTintColor = tintColor
