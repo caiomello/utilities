@@ -79,15 +79,15 @@ extension Date {
 // MARK: - Text
 
 extension Date {
-    public func text() -> String? {
+    public var text: String? {
         return text(short: false)
     }
 
-    public func shortText() -> String? {
+    public var shortText: String? {
         return text(short: true)
     }
 
-    public func yearText() -> String? {
+    public var yearText: String? {
         if isUnknown {
             return nil
         }
