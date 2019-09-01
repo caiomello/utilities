@@ -31,11 +31,13 @@ open class ActionButton: UIControl {
         }
     }
 
-    public var title: String = "ACTION" {
+    public var title: String = "Button" {
         didSet {
             titleLabel.text = title
         }
     }
+
+    public var offColor: UIColor = .black
 
     override public var isHighlighted: Bool {
         didSet {
@@ -72,10 +74,10 @@ open class ActionButton: UIControl {
 
         if isSelected {
             backgroundColor = tintColor
-            imageView.tintColor = superview?.backgroundColor
-            titleLabel.textColor = superview?.backgroundColor
+            imageView.tintColor = offColor
+            titleLabel.textColor = offColor
         } else {
-            backgroundColor = superview?.backgroundColor
+            backgroundColor = offColor
             imageView.tintColor = tintColor
             titleLabel.textColor = tintColor
         }
