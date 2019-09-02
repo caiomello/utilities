@@ -72,47 +72,6 @@ extension Date {
     }
 
     public var isUnknown: Bool {
-        return self == Date.distantPast || self == Date.distantFuture
-    }
-}
-
-// MARK: - Text
-
-extension Date {
-    public var text: String? {
-        return text(short: false)
-    }
-
-    public var shortText: String? {
-        return text(short: true)
-    }
-
-    public var yearText: String? {
-        if isUnknown {
-            return nil
-        }
-
-        DateFormatter.shared.dateFormat = "yyyy"
-        return DateFormatter.shared.string(from: self)
-    }
-
-    private func text(short: Bool) -> String? {
-        if isUnknown {
-            return nil
-        } else if isYesterday {
-            return "Yesterday"
-        } else if isToday {
-            return "Today"
-        } else if isTomorrow {
-            return "Tomorrow"
-        } else if isThisWeek {
-            DateFormatter.shared.dateFormat = "EEEE"
-        } else if isThisYear, isInTheFuture {
-            DateFormatter.shared.dateFormat = short ? "MMM d" : "MMMM d"
-        } else {
-            DateFormatter.shared.dateFormat = short ? "MMM d, yyyy" : "MMMM d, yyyy"
-        }
-
-        return DateFormatter.shared.string(from: self)
+        return year == Date.distantPast.year || year == Date.distantFuture.year
     }
 }
