@@ -86,7 +86,7 @@ extension UIView {
 // MARK: - Auto Layout
 
 extension UIView {
-    public func addWidthConstraint(withValue value: CGFloat) {
+    public func addWidthConstraint(_ value: CGFloat) {
         addConstraint(NSLayoutConstraint(item: self,
                                          attribute: .width,
                                          relatedBy: .equal,
@@ -96,7 +96,7 @@ extension UIView {
                                          constant: value))
     }
 
-    public func addHeightConstraint(withValue value: CGFloat) {
+    public func addHeightConstraint(_ value: CGFloat) {
         addConstraint(NSLayoutConstraint(item: self,
                                          attribute: .height,
                                          relatedBy: .equal,
