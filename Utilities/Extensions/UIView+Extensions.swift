@@ -86,6 +86,26 @@ extension UIView {
 // MARK: - Auto Layout
 
 extension UIView {
+    public func addWidthConstraint(withValue value: CGFloat) {
+        addConstraint(NSLayoutConstraint(item: self,
+                                         attribute: .width,
+                                         relatedBy: .equal,
+                                         toItem: nil,
+                                         attribute: .notAnAttribute,
+                                         multiplier: 1,
+                                         constant: value))
+    }
+
+    public func addHeightConstraint(withValue value: CGFloat) {
+        addConstraint(NSLayoutConstraint(item: self,
+                                         attribute: .height,
+                                         relatedBy: .equal,
+                                         toItem: nil,
+                                         attribute: .notAnAttribute,
+                                         multiplier: 1,
+                                         constant: value))
+    }
+
     public func fitVerticalEdgesToSuperview(obeyMargins: Bool = false) {
         superview?.addConstraints(
             NSLayoutConstraint.constraints(
