@@ -78,7 +78,7 @@ open class ActionButton: UIControl {
             imageView.tintColor = offColor
             titleLabel.textColor = offColor
         } else {
-            backgroundColor = onColor
+            backgroundColor = offColor
             imageView.tintColor = onColor
             titleLabel.textColor = onColor
         }
