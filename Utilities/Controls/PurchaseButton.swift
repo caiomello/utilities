@@ -29,11 +29,15 @@ public final class PurchaseButton: UIControl {
         }
     }
 
-    public var onColor: UIColor = .systemBlue
+    public var onColor: UIColor = .systemBlue {
+        didSet {
+            tintColor = onColor
+        }
+    }
 
     public func startLoading() {
         animate({
-            self.tintColor = .lightGray
+            self.layer.borderColor = UIColor.lightGray.cgColor
             self.isUserInteractionEnabled = false
             self.titleLabel.alpha = 0
             self.activityIndicatorView.startAnimating()
@@ -42,7 +46,7 @@ public final class PurchaseButton: UIControl {
 
     public func stopLoading() {
         animate({
-            self.tintColor = self.onColor
+            self.layer.borderColor = self.onColor.cgColor
             self.isUserInteractionEnabled = true
             self.titleLabel.alpha = 1
             self.activityIndicatorView.stopAnimating()
@@ -58,8 +62,8 @@ public final class PurchaseButton: UIControl {
     }
 
     override public func tintColorDidChange() {
-        layer.borderColor = onColor.cgColor
-        titleLabel.textColor = onColor
+        layer.borderColor = tintColor.cgColor
+        titleLabel.textColor = tintColor
     }
 
     override public func awakeFromNib() {
