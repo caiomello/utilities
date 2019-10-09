@@ -24,4 +24,8 @@ extension UICollectionView {
     public func dequeueSupplementaryView<T: UICollectionReusableView>(ofKind kind: String, at indexPath: IndexPath) -> T {
         return dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "\(T.self)", for: indexPath) as! T
     }
+
+    public func scrollToTop(animated: Bool = false) {
+        setContentOffset(CGPoint(x: 0, y: -adjustedContentInset.top), animated: animated)
+    }
 }

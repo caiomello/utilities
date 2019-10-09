@@ -13,7 +13,6 @@
 		25168BEB22CFD88200EDA788 /* NSDirectionalEdgeInsets+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25168BEA22CFD88200EDA788 /* NSDirectionalEdgeInsets+Extensions.swift */; };
 		254728F722F6563A0009C5E4 /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254728F622F6563A0009C5E4 /* UIStackView+Extensions.swift */; };
 		25601F8622DE5DEC00B4060D /* UITraitCollection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25601F8522DE5DEC00B4060D /* UITraitCollection+Extensions.swift */; };
-		2582C36022E242BA00238CA1 /* UIScrollView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2582C35F22E242BA00238CA1 /* UIScrollView+Extensions.swift */; };
 		25AA783C2319593000AEB740 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AA783B2319593000AEB740 /* ActionButton.swift */; };
 		25AA783E2319593900AEB740 /* PurchaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AA783D2319593900AEB740 /* PurchaseButton.swift */; };
 		25AA784F23195ED500AEB740 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AA784E23195ED500AEB740 /* WebViewController.swift */; };
@@ -52,7 +51,6 @@
 		25168BEA22CFD88200EDA788 /* NSDirectionalEdgeInsets+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSDirectionalEdgeInsets+Extensions.swift"; sourceTree = "<group>"; };
 		254728F622F6563A0009C5E4 /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
 		25601F8522DE5DEC00B4060D /* UITraitCollection+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITraitCollection+Extensions.swift"; sourceTree = "<group>"; };
-		2582C35F22E242BA00238CA1 /* UIScrollView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extensions.swift"; sourceTree = "<group>"; };
 		25AA783B2319593000AEB740 /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		25AA783D2319593900AEB740 /* PurchaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseButton.swift; sourceTree = "<group>"; };
 		25AA784E23195ED500AEB740 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
@@ -121,7 +119,6 @@
 				79C9B7C322AFFC550009F090 /* UICollectionViewFlowLayout+Extensions.swift */,
 				7925872822A41DA000A83B4B /* UIImage+Extensions.swift */,
 				7925873222A41EE800A83B4B /* UITableView+Extensions.swift */,
-				2582C35F22E242BA00238CA1 /* UIScrollView+Extensions.swift */,
 				254728F622F6563A0009C5E4 /* UIStackView+Extensions.swift */,
 				25601F8522DE5DEC00B4060D /* UITraitCollection+Extensions.swift */,
 				7925872622A41D8200A83B4B /* UIView+Extensions.swift */,
@@ -302,7 +299,6 @@
 				7925872522A41CF600A83B4B /* ColumnFlowLayout.swift in Sources */,
 				25108E0E230DBECF00D93C81 /* UIViewController+Extensions.swift in Sources */,
 				7925872F22A41EB800A83B4B /* Array+Extensions.swift in Sources */,
-				2582C36022E242BA00238CA1 /* UIScrollView+Extensions.swift in Sources */,
 				7925873322A41EE800A83B4B /* UITableView+Extensions.swift in Sources */,
 				25168BEB22CFD88200EDA788 /* NSDirectionalEdgeInsets+Extensions.swift in Sources */,
 				7925873922A4213D00A83B4B /* Date+Extensions.swift in Sources */,

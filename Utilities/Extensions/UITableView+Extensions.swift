@@ -28,4 +28,8 @@ extension UITableView {
     public func hideTrailingSeparators() {
         tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
     }
+
+    public func scrollToTop(animated: Bool = false) {
+        scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: animated)
+    }
 }
