@@ -37,6 +37,7 @@ open class ActionButton: UIControl {
         }
     }
 
+    public var onColor: UIColor = .systemBlue
     public var offColor: UIColor = .black
 
     override public var isHighlighted: Bool {
@@ -70,16 +71,16 @@ open class ActionButton: UIControl {
     }
 
     private func refreshState() {
-        layer.borderColor = tintColor.cgColor
+        layer.borderColor = onColor.cgColor
 
         if isSelected {
-            backgroundColor = tintColor
+            backgroundColor = onColor
             imageView.tintColor = offColor
             titleLabel.textColor = offColor
         } else {
-            backgroundColor = offColor
-            imageView.tintColor = tintColor
-            titleLabel.textColor = tintColor
+            backgroundColor = onColor
+            imageView.tintColor = onColor
+            titleLabel.textColor = onColor
         }
     }
 }
