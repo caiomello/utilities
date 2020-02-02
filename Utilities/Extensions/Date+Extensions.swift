@@ -34,8 +34,8 @@ extension Date {
     }
 
     public var isInTheLastTwoWeeks: Bool {
-        let oneWeekAgo = Calendar.current.date(byAdding: .day, value: -14, to: Date())
-        return Calendar.current.compare(self, to: oneWeekAgo!, toGranularity: .day) == .orderedDescending
+        let twoWeeksAgo = Calendar.current.date(byAdding: .day, value: -14, to: Date())
+        return Calendar.current.compare(self, to: twoWeeksAgo!, toGranularity: .day) == .orderedDescending
     }
 
     public var isYesterday: Bool {
