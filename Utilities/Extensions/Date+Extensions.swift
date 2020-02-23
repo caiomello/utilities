@@ -28,6 +28,11 @@ extension Date {
         return Calendar.current.compare(self, to: threeMonthsAgo!, toGranularity: .month) == .orderedAscending
     }
 
+    public var isBeforeSixMonthsAgo: Bool {
+        let sixMonthsAgo = Calendar.current.date(byAdding: .month, value: -6, to: Date())
+        return Calendar.current.compare(self, to: sixMonthsAgo!, toGranularity: .month) == .orderedAscending
+    }
+
     public var isInTheLastWeek: Bool {
         let oneWeekAgo = Calendar.current.date(byAdding: .day, value: -7, to: Date())
         return Calendar.current.compare(self, to: oneWeekAgo!, toGranularity: .day) == .orderedDescending
