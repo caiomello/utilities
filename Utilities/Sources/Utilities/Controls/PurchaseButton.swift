@@ -92,7 +92,7 @@ extension PurchaseButton {
 
         activityIndicatorView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(activityIndicatorView)
-        activityIndicatorView.centerToSuperview()
+        activityIndicatorView.centerInSuperview()
 
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         addSubview(titleLabel)

@@ -17,18 +17,6 @@ extension UIView {
     }
 }
 
-// MARK: - Interface Builder
-
-extension UIView {
-    public static var isInterfaceBuilder: Bool {
-        #if TARGET_INTERFACE_BUILDER
-        return true
-        #else
-        return false
-        #endif
-    }
-}
-
 // MARK: - Animation
 
 extension UIView {
@@ -133,7 +121,7 @@ extension UIView {
         fitHorizontalEdgesToSuperview(obeyMargins: obeyMargins)
     }
 
-    public func centerHorizontallyToSuperview() {
+    public func centerHorizontallyInSuperview() {
         superview?.addConstraint(
             NSLayoutConstraint(
                 item: self,
@@ -147,7 +135,7 @@ extension UIView {
         )
     }
 
-    public func centerVerticallyToSuperview() {
+    public func centerVerticallyInSuperview() {
         superview?.addConstraint(
             NSLayoutConstraint(
                 item: self,
@@ -161,8 +149,8 @@ extension UIView {
         )
     }
 
-    public func centerToSuperview() {
-        centerHorizontallyToSuperview()
-        centerVerticallyToSuperview()
+    public func centerInSuperview() {
+        centerHorizontallyInSuperview()
+        centerVerticallyInSuperview()
     }
 }
