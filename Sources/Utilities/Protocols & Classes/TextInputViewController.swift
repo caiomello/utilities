@@ -51,8 +51,9 @@ extension TextInputViewController {
             scrollView.contentInset.bottom = 0
         } else {
             let inset = view.convert(keyboardRect, from: nil).size.height
-            scrollView.contentInset.bottom = inset
-            scrollView.verticalScrollIndicatorInsets.bottom = inset
+            scrollView.contentInset.bottom = inset - scrollView.safeAreaInsets.bottom
         }
+
+        scrollView.verticalScrollIndicatorInsets.bottom = scrollView.contentInset.bottom
     }
 }
