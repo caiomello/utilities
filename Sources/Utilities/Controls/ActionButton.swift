@@ -51,13 +51,13 @@ open class ActionButton: UIControl {
         }
     }
 
-    override public func awakeFromNib() {
+    override open func awakeFromNib() {
         super.awakeFromNib()
 
         layout()
     }
 
-    override public func layoutSubviews() {
+    override open func layoutSubviews() {
         super.layoutSubviews()
 
         layer.cornerRadius = bounds.height/4
