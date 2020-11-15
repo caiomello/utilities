@@ -36,8 +36,13 @@ public enum ContentState: Equatable {
     }
 
     public struct ButtonConfiguration {
-        public let title: String
-        public let action: () -> Void
+        let title: String
+        let action: () -> Void
+
+        public init(title: String, action: @escaping () -> Void) {
+            self.title = title
+            self.action = action
+        }
     }
 }
 
