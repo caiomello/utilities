@@ -13,15 +13,14 @@ open class ActionButton: UIControl {
         let imageView = UIImageView()
         imageView.isUserInteractionEnabled = false
         imageView.contentMode = .scaleAspectFit
-        imageView.tintAdjustmentMode = .normal
         return imageView
     }()
 
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.isUserInteractionEnabled = false
-        label.font = UIFont.preferredFont(forTextStyle: .headline)
         label.adjustsFontForContentSizeCategory = true
+        label.font = .preferredFont(forTextStyle: .headline)
         return label
     }()
 
@@ -37,8 +36,12 @@ open class ActionButton: UIControl {
         }
     }
 
-    public var onColor: UIColor = .systemBlue
-    public var offColor: UIColor = .black
+    public var titleColor: UIColor = .black {
+        didSet {
+            titleLabel.textColor = titleColor
+            imageView.tintColor = titleColor
+        }
+    }
 
     override public var isHighlighted: Bool {
         didSet {
@@ -46,16 +49,6 @@ open class ActionButton: UIControl {
                 alpha = isHighlighted ? 0.5 : 1
             }
         }
-    }
-
-    override public var isSelected: Bool {
-        didSet {
-            refreshState()
-        }
-    }
-
-    override public func tintColorDidChange() {
-        refreshState()
     }
 
     override public func awakeFromNib() {
@@ -67,21 +60,7 @@ open class ActionButton: UIControl {
     override public func layoutSubviews() {
         super.layoutSubviews()
 
-        layer.cornerRadius = bounds.height/2
-    }
-
-    private func refreshState() {
-        layer.borderColor = onColor.cgColor
-
-        if isSelected {
-            backgroundColor = onColor
-            imageView.tintColor = offColor
-            titleLabel.textColor = offColor
-        } else {
-            backgroundColor = offColor
-            imageView.tintColor = onColor
-            titleLabel.textColor = onColor
-        }
+        layer.cornerRadius = bounds.height/4
     }
 }
 
@@ -89,18 +68,26 @@ open class ActionButton: UIControl {
 
 extension ActionButton {
     private func layout() {
-        backgroundColor = .clear
         clipsToBounds = true
 
-        layer.borderWidth = 2
+        backgroundColor = tintColor
+        titleLabel.textColor = .black
+        imageView.tintColor = titleLabel.textColor
 
-        directionalLayoutMargins = NSDirectionalEdgeInsets(horizontal: 10, vertical: 8)
+        directionalLayoutMargins = NSDirectionalEdgeInsets(horizontal: 20, vertical: 12)
 
         let stackView = UIStackView(arrangedSubviews: [imageView, titleLabel])
         stackView.isUserInteractionEnabled = false
-        stackView.spacing = 6
+        stackView.spacing = UIStackView.spacingUseSystem
         stackView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(stackView)
-        stackView.fitToSuperview(obeyMargins: true)
+
+        stackView.fitVerticalEdgesToSuperview(obeyMargins: true)
+        stackView.centerHorizontallyInSuperview()
+
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-(>=margin)-[stackView]-(>=margin)-|",
+                                                      options: [],
+                                                      metrics: ["margin": directionalLayoutMargins.leading],
+                                                      views: ["stackView": stackView]))
     }
 }
