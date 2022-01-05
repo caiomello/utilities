@@ -34,6 +34,7 @@ extension UIViewController {
 
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.navigationBar.barStyle = .black
+        navigationController.modalPresentationStyle = .formSheet
 
         present(navigationController, animated: true)
     }
