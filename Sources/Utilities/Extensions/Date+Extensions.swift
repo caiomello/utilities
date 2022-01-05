@@ -80,8 +80,4 @@ extension Date {
     public var isAfterNextYear: Bool {
         return year > Date().year + 1
     }
-
-    public var isUnknown: Bool {
-        return year == Date.distantPast.year || year == Date.distantFuture.year
-    }
 }
