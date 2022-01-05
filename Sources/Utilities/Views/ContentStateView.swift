@@ -67,9 +67,7 @@ final class ContentStateView: UIView {
 
     @objc private lazy var buttonAction: (() -> Void)? = nil
 
-    var isLoading: Bool {
-        activityIndicatorView.isAnimating
-    }
+    var isLoading = false
 
     public required init(state: ContentState) {
         super.init(frame: .zero)
@@ -88,16 +86,21 @@ extension ContentStateView {
     private func configure(state: ContentState) {
         switch state {
         case .content:
-            break
+            isLoading = false
 
         case .loading:
+            isLoading = true
             stackView.isHidden = true
-            activityIndicatorView.startAnimating()
+
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+                self?.activityIndicatorView.startAnimating()
+            }
 
 
         case .noContent(let configuration):
-            stackView.isHidden = false
+            isLoading = false
             activityIndicatorView.stopAnimating()
+            stackView.isHidden = false
             imageView.image = configuration.image
             titleLabel.text = configuration.title
             subtitleLabel.text = configuration.subtitle
