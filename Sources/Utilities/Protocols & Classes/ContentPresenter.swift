@@ -47,16 +47,16 @@ public enum ContentState: Equatable {
 }
 
 public protocol ContentPresenter {
-    var isLoading: Bool { get }
-    func setContentState(_ state: ContentState, animated: Bool)
+    @MainActor var isLoading: Bool { get }
+    @MainActor func setContentState(_ state: ContentState, animated: Bool)
 }
 
 extension ContentPresenter where Self: UIViewController {
-    public var isLoading: Bool {
+    @MainActor public var isLoading: Bool {
         return currentView?.isLoading ?? false
     }
 
-    public func setContentState(_ state: ContentState, animated: Bool) {
+    @MainActor public func setContentState(_ state: ContentState, animated: Bool) {
         let currentView = self.currentView
 
         var newView: ContentStateView?
