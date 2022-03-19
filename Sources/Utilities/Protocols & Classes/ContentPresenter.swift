@@ -72,12 +72,12 @@ extension ContentPresenter where Self: UIViewController {
         }
 
         if animated {
-            view.animate({
+            view.animate(withDuration: 0.5) {
                 currentView?.alpha = 0
                 newView?.alpha = 1
-            }, completion: {
+            } completion: {
                 currentView?.removeFromSuperview()
-            })
+            }
         } else {
             currentView?.removeFromSuperview()
             newView?.alpha = 1
