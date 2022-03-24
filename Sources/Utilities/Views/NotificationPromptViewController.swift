@@ -26,10 +26,14 @@ public final class NotificationPromptViewController: UIViewController {
     }
 
     private let text: String
+    private let accentColor: UIColor
+    private let backgroundColor: UIColor
     private let completion: (_ response: NotificationPromptResponse) -> Void
 
-    public init?(coder: NSCoder, text: String, completion: @escaping (_ response: NotificationPromptResponse) -> Void) {
+    public init?(coder: NSCoder, text: String, accentColor: UIColor, backgroundColor: UIColor, completion: @escaping (_ response: NotificationPromptResponse) -> Void) {
         self.text = text
+        self.accentColor = accentColor
+        self.backgroundColor = backgroundColor
         self.completion = completion
         super.init(coder: coder)
     }
@@ -51,8 +55,10 @@ extension NotificationPromptViewController {
 
         view.directionalLayoutMargins = NSDirectionalEdgeInsets(horizontal: 20, vertical: 20)
 
-        acceptButton.titleColor = view.backgroundColor!
-        acceptButton.backgroundColor = view.tintColor
+        view.tintColor = accentColor
+        view.backgroundColor = backgroundColor
+        acceptButton.titleColor = backgroundColor
+        acceptButton.backgroundColor = accentColor
     }
 }
 

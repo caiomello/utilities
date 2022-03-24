@@ -9,15 +9,13 @@ import UIKit
 
 public protocol NotificationPromptControllerProtocol {
     @MainActor func presentNotificationPromptIfNeeded(from presenter: UIViewController)
-    func presentNotificationPrompt(from presenter: UIViewController, text: String, completion: @escaping (_ response: NotificationPromptResponse) -> Void)
+    func presentNotificationPrompt(from presenter: UIViewController, text: String, accentColor: UIColor, backgroundColor: UIColor, completion: @escaping (_ response: NotificationPromptResponse) -> Void)
 }
 
 public extension NotificationPromptControllerProtocol {
-    func presentNotificationPrompt(from presenter: UIViewController, text: String, completion: @escaping (_ response: NotificationPromptResponse) -> Void) {
-        presenter.present(from: .module) {
-            let viewController = NotificationPromptViewController(coder: $0, text: text, completion: completion)
-            viewController?.view.backgroundColor = presenter.view.backgroundColor
-            return viewController
-        }
+    func presentNotificationPrompt(from presenter: UIViewController, text: String, accentColor: UIColor, backgroundColor: UIColor, completion: @escaping (_ response: NotificationPromptResponse) -> Void) {
+        let storyboard = UIStoryboard(name: "\(NotificationPromptViewController.self)", bundle: .module)
+        let viewController: NotificationPromptViewController? = storyboard.instantiateInitialViewController { NotificationPromptViewController(coder: $0, text: text, accentColor: accentColor, backgroundColor: backgroundColor, completion: completion) }
+        presenter.present(viewController!, animated: true)
     }
 }
