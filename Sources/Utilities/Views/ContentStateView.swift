@@ -7,7 +7,14 @@
 
 import UIKit
 
-final class ContentStateView: UIView {
+public final class ContentStateView: UIView {
+    public struct Appearance {
+        public static var shared = ContentStateView.Appearance()
+        public var titleFont: UIFont?
+        public var subtitleFont: UIFont?
+        public var buttonFont: UIFont?
+    }
+
     private lazy var stackView: UIStackView = {
         let view = UIStackView(arrangedSubviews: [imageView, textStackView, button])
         view.axis = .vertical
@@ -34,7 +41,7 @@ final class ContentStateView: UIView {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.adjustsFontForContentSizeCategory = true
-        label.font = UIFont.preferredFont(forTextStyle: .title1)
+        label.font = Appearance.shared.titleFont ?? UIFont.preferredFont(forTextStyle: .title1)
         label.textAlignment = .center
         label.textColor = .lightGray
         label.numberOfLines = 0
@@ -44,7 +51,7 @@ final class ContentStateView: UIView {
     private let subtitleLabel: UILabel = {
         let label = UILabel()
         label.adjustsFontForContentSizeCategory = true
-        label.font = UIFont.preferredFont(forTextStyle: .body)
+        label.font = Appearance.shared.subtitleFont ?? UIFont.preferredFont(forTextStyle: .body)
         label.textAlignment = .center
         label.textColor = .lightGray
         label.numberOfLines = 0
@@ -54,6 +61,7 @@ final class ContentStateView: UIView {
     private lazy var button: UIButton = {
         let button = UIButton(type: .system)
         button.titleLabel?.adjustsFontForContentSizeCategory = true
+        button.titleLabel?.font = Appearance.shared.buttonFont ?? UIFont.preferredFont(forTextStyle: .headline)
         button.addTarget(self, action: #selector(getter: buttonAction), for: .touchUpInside)
         return button
     }()

@@ -16,7 +16,7 @@ open class ActionButton: UIControl {
         return imageView
     }()
 
-    private let titleLabel: UILabel = {
+    public let titleLabel: UILabel = {
         let label = UILabel()
         label.isUserInteractionEnabled = false
         label.adjustsFontForContentSizeCategory = true
@@ -26,7 +26,7 @@ open class ActionButton: UIControl {
 
     public var image: UIImage? {
         didSet {
-            imageView.image = image?.applyingSymbolConfiguration(UIImage.SymbolConfiguration(textStyle: .headline))
+            imageView.image = image
         }
     }
 

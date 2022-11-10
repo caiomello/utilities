@@ -7,33 +7,17 @@
 
 import UIKit
 
-public enum NotificationPromptResponse {
-    case accepted
-    case denied
-}
-
 public final class NotificationPromptViewController: UIViewController {
-    @IBOutlet private var textLabel: UILabel! {
-        didSet {
-            textLabel.text = text
-        }
-    }
+    @IBOutlet private var textLabel: UILabel!
+    @IBOutlet private var acceptButton: ActionButton!
+    @IBOutlet private var denyButton: UIButton!
 
-    @IBOutlet private var acceptButton: ActionButton! {
-        didSet {
-            acceptButton.title = "Enable Notifications"
-        }
-    }
+    private let configuration: NotificationPromptConfiguration
 
-    private let text: String
-    private let accentColor: UIColor
-    private let backgroundColor: UIColor
     private let completion: (_ response: NotificationPromptResponse) -> Void
 
-    public init?(coder: NSCoder, text: String, accentColor: UIColor, backgroundColor: UIColor, completion: @escaping (_ response: NotificationPromptResponse) -> Void) {
-        self.text = text
-        self.accentColor = accentColor
-        self.backgroundColor = backgroundColor
+    public init?(coder: NSCoder, configuration: NotificationPromptConfiguration, completion: @escaping (_ response: NotificationPromptResponse) -> Void) {
+        self.configuration = configuration
         self.completion = completion
         super.init(coder: coder)
     }
@@ -55,17 +39,25 @@ extension NotificationPromptViewController {
 
         view.directionalLayoutMargins = NSDirectionalEdgeInsets(horizontal: 20, vertical: 20)
 
-        view.tintColor = accentColor
-        view.backgroundColor = backgroundColor
-        acceptButton.titleColor = backgroundColor
-        acceptButton.backgroundColor = accentColor
+        view.tintColor = configuration.accentColor
+        view.backgroundColor = configuration.backgroundColor
+
+        textLabel.text = configuration.text
+        textLabel.font = configuration.font
+
+        acceptButton.titleLabel.font = configuration.font
+        acceptButton.titleColor = configuration.backgroundColor
+        acceptButton.backgroundColor = configuration.accentColor
+        acceptButton.title = "Enable Notifications"
+
+        denyButton.titleLabel?.font = configuration.font
     }
 }
 
 // MARK: - Interaction
 
 extension NotificationPromptViewController {
-    @IBAction private func acceptButtonAction(_ sender: UIButton) {
+    @IBAction private func acceptButtonAction(_ sender: ActionButton) {
         completion(.accepted)
         dismiss(animated: true)
     }
