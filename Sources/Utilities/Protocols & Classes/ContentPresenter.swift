@@ -22,12 +22,12 @@ public enum ContentState: Equatable {
     }
 
     public struct Configuration {
-        let image: UIImage
+        let image: UIImage?
         let title: String
         let subtitle: String?
         let button: ButtonConfiguration?
 
-        public init(image: UIImage, title: String, subtitle: String? = nil, button: ButtonConfiguration? = nil) {
+        public init(title: String, subtitle: String? = nil, image: UIImage? = nil, button: ButtonConfiguration? = nil) {
             self.image = image
             self.title = title
             self.subtitle = subtitle

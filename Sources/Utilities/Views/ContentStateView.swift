@@ -110,6 +110,7 @@ extension ContentStateView {
             activityIndicatorView.stopAnimating()
             stackView.isHidden = false
             imageView.image = configuration.image
+            imageView.isHidden = configuration.image == nil
             titleLabel.text = configuration.title
             subtitleLabel.text = configuration.subtitle
 
