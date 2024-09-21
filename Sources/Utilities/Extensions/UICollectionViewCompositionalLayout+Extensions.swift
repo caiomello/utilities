@@ -52,7 +52,7 @@ extension UICollectionViewCompositionalLayout {
                                                                heightDimension: .estimated(44))
 
                 let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: sectionHeaderSize, elementKind: headerViewOfKind, alignment: .top)
-                sectionHeader.pinToVisibleBounds = true
+                sectionHeader.pinToVisibleBounds = false
 
                 section.boundarySupplementaryItems = [sectionHeader]
             }
