@@ -56,30 +56,30 @@ public enum VersioningError: Error {
 
 public struct VersioningHelper {
     private let currentVersionString: String?
-    private var store: any AppVersionProvider
+    private var versionProvider: any AppVersionProvider
     private let logger = Logger(subsystem: "Utilities", category: "VersioningHelper")
 
-    init(currentVersion: String?, store: any AppVersionProvider) {
+    init(currentVersion: String?, versionProvider: any AppVersionProvider) {
         self.currentVersionString = currentVersion
-        self.store = store
+        self.versionProvider = versionProvider
     }
 
-    public init(bundle: Bundle, store: any AppVersionProvider) {
+    public init(bundle: Bundle, versionProvider: any AppVersionProvider) {
         self.init(
             currentVersion: bundle.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String,
-            store: store
+            versionProvider: versionProvider
         )
     }
 
     public mutating func didLaunch() throws -> LaunchType {
-        let previousVersionString = store.appVersion
+        let previousVersionString = versionProvider.appVersion
 
         do {
             guard let currentVersionString else { throw VersioningError.noBundleVersion }
 
             let currentVersion = try Version(string: currentVersionString)
 
-            store.appVersion = currentVersionString
+            versionProvider.appVersion = currentVersionString
 
             if previousVersionString == nil {
                 logger.notice("First launch - version \(currentVersion.description)")

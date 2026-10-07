@@ -18,8 +18,8 @@ private final class TestAppVersionProvider: AppVersionProvider {
 
 struct VersioningHelperTests {
     @Test func firstLaunchStoresTheCurrentVersion() throws {
-        let store = TestAppVersionProvider(appVersion: nil)
-        var helper = VersioningHelper(currentVersion: "1.2.0", store: store)
+        let versionProvider = TestAppVersionProvider(appVersion: nil)
+        var helper = VersioningHelper(currentVersion: "1.2.0", versionProvider: versionProvider)
 
         let launch = try helper.didLaunch()
 
@@ -28,12 +28,12 @@ struct VersioningHelperTests {
             return
         }
         #expect(version == (try Version(string: "1.2.0")))
-        #expect(store.appVersion == "1.2.0")
+        #expect(versionProvider.appVersion == "1.2.0")
     }
 
     @Test func regularLaunchKeepsTheStoredVersion() throws {
-        let store = TestAppVersionProvider(appVersion: "1.2.0")
-        var helper = VersioningHelper(currentVersion: "1.2.0", store: store)
+        let versionProvider = TestAppVersionProvider(appVersion: "1.2.0")
+        var helper = VersioningHelper(currentVersion: "1.2.0", versionProvider: versionProvider)
 
         let launch = try helper.didLaunch()
 
@@ -42,12 +42,12 @@ struct VersioningHelperTests {
             return
         }
         #expect(version == (try Version(string: "1.2.0")))
-        #expect(store.appVersion == "1.2.0")
+        #expect(versionProvider.appVersion == "1.2.0")
     }
 
     @Test func updatedLaunchReportsBothVersionsAndStoresTheCurrentOne() throws {
-        let store = TestAppVersionProvider(appVersion: "1.1")
-        var helper = VersioningHelper(currentVersion: "1.2.0", store: store)
+        let versionProvider = TestAppVersionProvider(appVersion: "1.1")
+        var helper = VersioningHelper(currentVersion: "1.2.0", versionProvider: versionProvider)
 
         let launch = try helper.didLaunch()
 
@@ -57,16 +57,16 @@ struct VersioningHelperTests {
         }
         #expect(from == (try Version(string: "1.1")))
         #expect(to == (try Version(string: "1.2.0")))
-        #expect(store.appVersion == "1.2.0")
+        #expect(versionProvider.appVersion == "1.2.0")
     }
 
-    @Test func missingVersionThrowsAndLeavesTheStoreUntouched() {
-        let store = TestAppVersionProvider(appVersion: "1.1")
-        var helper = VersioningHelper(currentVersion: nil, store: store)
+    @Test func missingVersionThrowsAndLeavesTheStoredVersionUntouched() {
+        let versionProvider = TestAppVersionProvider(appVersion: "1.1")
+        var helper = VersioningHelper(currentVersion: nil, versionProvider: versionProvider)
 
         #expect(throws: VersioningError.noBundleVersion) {
             try helper.didLaunch()
         }
-        #expect(store.appVersion == "1.1")
+        #expect(versionProvider.appVersion == "1.1")
     }
 }
