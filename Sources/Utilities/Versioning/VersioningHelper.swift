@@ -9,7 +9,7 @@
 import Foundation
 import OSLog
 
-public protocol AppVersionStore {
+public protocol AppVersionProvider {
     var appVersion: String? { get set }
 }
 
@@ -56,15 +56,15 @@ public enum VersioningError: Error {
 
 public struct VersioningHelper {
     private let currentVersionString: String?
-    private var store: any AppVersionStore
+    private var store: any AppVersionProvider
     private let logger = Logger(subsystem: "Utilities", category: "VersioningHelper")
 
-    init(currentVersion: String?, store: any AppVersionStore) {
+    init(currentVersion: String?, store: any AppVersionProvider) {
         self.currentVersionString = currentVersion
         self.store = store
     }
 
-    public init(bundle: Bundle, store: any AppVersionStore) {
+    public init(bundle: Bundle, store: any AppVersionProvider) {
         self.init(
             currentVersion: bundle.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String,
             store: store

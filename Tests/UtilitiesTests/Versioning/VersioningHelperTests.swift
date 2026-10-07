@@ -8,7 +8,7 @@
 import Testing
 @testable import Utilities
 
-private final class TestAppVersionStore: AppVersionStore {
+private final class TestAppVersionProvider: AppVersionProvider {
     var appVersion: String?
 
     init(appVersion: String?) {
@@ -18,7 +18,7 @@ private final class TestAppVersionStore: AppVersionStore {
 
 struct VersioningHelperTests {
     @Test func firstLaunchStoresTheCurrentVersion() throws {
-        let store = TestAppVersionStore(appVersion: nil)
+        let store = TestAppVersionProvider(appVersion: nil)
         var helper = VersioningHelper(currentVersion: "1.2.0", store: store)
 
         let launch = try helper.didLaunch()
@@ -32,7 +32,7 @@ struct VersioningHelperTests {
     }
 
     @Test func regularLaunchKeepsTheStoredVersion() throws {
-        let store = TestAppVersionStore(appVersion: "1.2.0")
+        let store = TestAppVersionProvider(appVersion: "1.2.0")
         var helper = VersioningHelper(currentVersion: "1.2.0", store: store)
 
         let launch = try helper.didLaunch()
@@ -46,7 +46,7 @@ struct VersioningHelperTests {
     }
 
     @Test func updatedLaunchReportsBothVersionsAndStoresTheCurrentOne() throws {
-        let store = TestAppVersionStore(appVersion: "1.1")
+        let store = TestAppVersionProvider(appVersion: "1.1")
         var helper = VersioningHelper(currentVersion: "1.2.0", store: store)
 
         let launch = try helper.didLaunch()
@@ -61,7 +61,7 @@ struct VersioningHelperTests {
     }
 
     @Test func missingVersionThrowsAndLeavesTheStoreUntouched() {
-        let store = TestAppVersionStore(appVersion: "1.1")
+        let store = TestAppVersionProvider(appVersion: "1.1")
         var helper = VersioningHelper(currentVersion: nil, store: store)
 
         #expect(throws: VersioningError.noBundleVersion) {
